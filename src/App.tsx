@@ -1,9 +1,380 @@
-import React from 'react';
-import { MapPin, Clock, Camera, History, Archive as Architecture, Compass, Columns, ChevronDown, Ruler, Palette, Image, Leaf, Calendar, BookOpen } from 'lucide-react';
+import React, { useState } from 'react';
+import { MapPin, Camera, History, Archive as Architecture, Compass, Columns, ChevronDown, Ruler, Palette, Leaf, Calendar, BookOpen } from 'lucide-react';
+
+type Language = 'en' | 'hi' | 'or';
+
+interface ContentData {
+  title: string;
+  subtitle: string;
+  location: string;
+  historicalOverview: {
+    title: string;
+    content: string[];
+  };
+  architecturalComposition: {
+    title: string;
+    primaryStructure: {
+      title: string;
+      items: string[];
+    };
+    panchangaBada: {
+      title: string;
+      items: string[];
+    };
+  };
+  sculpturalHeritage: {
+    title: string;
+    content: string[];
+    items: string[];
+  };
+  nayikas: {
+    title: string;
+    content: string[];
+    activities: {
+      title: string;
+      items: string[];
+    };
+    interactions: {
+      title: string;
+      items: string[];
+    };
+    expressions: {
+      title: string;
+      items: string[];
+    };
+  };
+  decorativeArt: {
+    title: string;
+    content: string[];
+  };
+  historicalDating: {
+    title: string;
+    content: string;
+  };
+  gardenComplex: {
+    title: string;
+    content: string;
+  };
+}
+
+const content: Record<Language, ContentData> = {
+  en: {
+    title: "Rajarani Temple",
+    subtitle: "A Masterpiece of Odishan Architecture",
+    location: "20°15'N, 85°50'E • Bhubaneswar, Odisha",
+    historicalOverview: {
+      title: "Historical Overview",
+      content: [
+        "The Rajarani temple, originally known as the Indresvara Siva Temple, stands as a testament to the architectural brilliance of ancient Odisha. Located in the north-east of Lingaraja Temple, this remarkable structure represents a unique experiment in temple architecture, distinguished by its sculptural excellence and ornate design.",
+        "The temple derives its current name 'Rajarani' from the fine-grained yellowish sandstone used in its construction. This special stone, known locally as Rajarania, gives the temple its distinctive amber hue that has mellowed beautifully with time, enhancing its architectural splendor."
+      ]
+    },
+    architecturalComposition: {
+      title: "Architectural Composition",
+      primaryStructure: {
+        title: "Primary Structure",
+        items: [
+          "Eastern Orientation",
+          "Sanctum (Deul) Height: 17.9 meters", 
+          "Pancharatha Plan with Curvilinear Superstructure",
+          "Three-Moulded Platform Base"
+        ]
+      },
+      panchangaBada: {
+        title: "Panchanga Bada (Five Divisions)",
+        items: [
+          "1. Pabhaga (Base)",
+          "2. Talajangha (Lower Wall)", 
+          "3. Bandhana (Binding)",
+          "4. Uparajangha (Upper Wall)",
+          "5. Baranda (Top Section)"
+        ]
+      }
+    },
+    sculpturalHeritage: {
+      title: "Sculptural Heritage",
+      content: [
+        "The temple is renowned for its rich sculptural wealth, featuring several notable elements that showcase the artistic mastery of ancient Odishan craftsmen."
+      ],
+      items: [
+        "Naga-nagi stambha (Serpent Pillars)",
+        "Saiva dwarapalas (Shaivite Door Guardians)", 
+        "Lakulisa sculpture",
+        "Navagrahas (Nine Planets)",
+        "Astadikpalas (Eight Directional Guardians)"
+      ]
+    },
+    nayikas: {
+      title: "The Nayikas",
+      content: [
+        "The temple's celebrity status is largely attributed to its tall, slender, and sophisticated nayikas adorning the sanctum walls. These figures depict various emotions and activities, showcasing the daily life and expressions of women in ancient times."
+      ],
+      activities: {
+        title: "Daily Activities",
+        items: [
+          "Attending to toilet",
+          "Looking into mirror", 
+          "Taking off anklet"
+        ]
+      },
+      interactions: {
+        title: "Interactions",
+        items: [
+          "Fondling her child",
+          "Caressing pet bird",
+          "Conversing with companions"
+        ]
+      },
+      expressions: {
+        title: "Expressions",
+        items: [
+          "Various emotional states",
+          "Holding tree branch",
+          "Playing musical instruments"
+        ]
+      }
+    },
+    decorativeArt: {
+      title: "Decorative Artistry",
+      content: [
+        "The temple walls are adorned with intricate scroll motifs featuring lush foliages, detailed creepers, and vanalata (forest vines). Each design contains independent foliage patterns, creating a unique artistic expression that enhances the temple's overall aesthetic appeal."
+      ]
+    },
+    historicalDating: {
+      title: "Historical Dating",
+      content: "Based on its sculptural art and architectural style, scholars have dated this temple to approximately the mid-11th century AD, marking a significant period in Odishan temple architecture."
+    },
+    gardenComplex: {
+      title: "Garden Complex", 
+      content: "A stunning garden complex with thoughtful landscaping has been developed around the monument, enhancing its natural beauty and providing a serene environment for visitors."
+    }
+  },
+  hi: {
+    title: "राजारानी मंदिर",
+    subtitle: "ओडिशा की वास्तुकला का उत्कृष्ट उदाहरण",
+    location: "20°15'N, 85°50'E • भुवनेश्वर, ओडिशा",
+    historicalOverview: {
+      title: "ऐतिहासिक अवलोकन",
+      content: [
+        "राजारानी मंदिर, जिसे पहले इंद्रेश्वर शिव मंदिर के नाम से जाना जाता था, प्राचीन ओडिशा की वास्तुकला की प्रतिभा का एक प्रमाण है। यह मंदिर लिंगराज मंदिर के उत्तर-पूर्व में स्थित है और अपनी मूर्तिकला और अलंकृत डिजाइन के लिए प्रसिद्ध है।",
+        "इस मंदिर का नाम 'राजारानी' इसके निर्माण में उपयोग किए गए महीन दानेदार पीले बलुआ पत्थर से मिला है। यह विशेष पत्थर, जो स्थानीय रूप से राजरानिया के नाम से जाना जाता है, मंदिर को एक विशिष्ट एम्बर रंग प्रदान करता है।"
+      ]
+    },
+    architecturalComposition: {
+      title: "वास्तुकला रचना",
+      primaryStructure: {
+        title: "प्राथमिक संरचना",
+        items: [
+          "पूर्वी अभिविन्यास",
+          "गर्भगृह (देउल) की ऊंचाई: 17.9 मीटर",
+          "पंचरथा योजना और वक्र रेखीय अधिरचना", 
+          "तीन-मोल्डेड प्लेटफॉर्म आधार"
+        ]
+      },
+      panchangaBada: {
+        title: "पंचांग बाड़ा (पांच विभाजन)",
+        items: [
+          "1. पाभाग (आधार)",
+          "2. तालाजंघा (निचली दीवार)",
+          "3. बंधन (बाध्यकारी)",
+          "4. उपरजंघा (ऊपरी दीवार)", 
+          "5. बारंडा (शीर्ष खंड)"
+        ]
+      }
+    },
+    sculpturalHeritage: {
+      title: "मूर्तिकला विरासत",
+      content: [
+        "मंदिर अपनी समृद्ध मूर्तिकला विरासत के लिए प्रसिद्ध है, जो प्राचीन ओडिशा के शिल्पकारों की कलात्मक महारत को प्रदर्शित करती है।"
+      ],
+      items: [
+        "नाग-नागी स्तंभ",
+        "शैव द्वारपाल",
+        "लकुलीसा मूर्ति",
+        "नवग्रह",
+        "अष्टदिकपाल (आठ दिशाओं के रक्षक)"
+      ]
+    },
+    nayikas: {
+      title: "नायिकाएँ",
+      content: [
+        "मंदिर की दीवारों पर नायिकाओं की मूर्तियाँ हैं, जो विभिन्न भावनाओं और गतिविधियों को दर्शाती हैं। इन मूर्तियों में प्राचीन काल की महिलाओं के दैनिक जीवन और अभिव्यक्तियों का चित्रण है।"
+      ],
+      activities: {
+        title: "दैनिक गतिविधियाँ",
+        items: [
+          "शौच में भाग लेना",
+          "दर्पण में देखना",
+          "पायल उतारना"
+        ]
+      },
+      interactions: {
+        title: "बातचीत",
+        items: [
+          "अपने बच्चे को प्यार करना",
+          "पालतू पक्षी को सहलाना",
+          "साथियों के साथ बातचीत"
+        ]
+      },
+      expressions: {
+        title: "भावनाएं",
+        items: [
+          "विभिन्न भावनात्मक अवस्थाएं",
+          "पेड़ की शाखा पकड़ना",
+          "संगीत वाद्ययंत्र बजाना"
+        ]
+      }
+    },
+    decorativeArt: {
+      title: "अलंकृत कला",
+      content: [
+        "मंदिर की दीवारों पर जटिल स्क्रॉल मोटिफ़ हैं, जिनमें लचीली पत्तियाँ, विस्तृत लता और वनलता शामिल हैं। प्रत्येक डिज़ाइन में स्वतंत्र पत्ती पैटर्न हैं, जो एक अद्वितीय कलात्मक अभिव्यक्ति बनाते हैं।"
+      ]
+    },
+    historicalDating: {
+      title: "ऐतिहासिक तिथि",
+      content: "विद्वानों ने मंदिर की मूर्तिकला और वास्तुकला शैली के आधार पर इसे लगभग 11वीं शताब्दी के मध्य में निर्मित माना है, जो ओडिशा की मंदिर वास्तुकला में एक महत्वपूर्ण अवधि है।"
+    },
+    gardenComplex: {
+      title: "उद्यान परिसर",
+      content: "मंदिर के आसपास एक सुंदर उद्यान परिसर विकसित किया गया है, जो इसकी प्राकृतिक सुंदरता को बढ़ाता है और दर्शकों के लिए एक शांत वातावरण प्रदान करता है।"
+    }
+  },
+  or: {
+    title: "ରାଜାରାଣୀ ମନ୍ଦିର",
+    subtitle: "ଓଡିଶା ସ୍ଥାପତ୍ୟର ଉତ୍କୃଷ୍ଟ ଉଦାହରଣ",
+    location: "20°15'N, 85°50'E • ଭୁବନେଶ୍ୱର, ଓଡ଼ିଶା",
+    historicalOverview: {
+      title: "ଐତିହାସିକ ସାରାଂଶ",
+      content: [
+        "ପୂର୍ବରୁ ଇନ୍ଦ୍ରେଶ୍ୱର ଶିବ ମନ୍ଦିର ଭାବରେ ଜଣାଶୁଣା ରାଜରାଣୀ ମନ୍ଦିର, ପ୍ରାଚୀନ ଓଡ଼ିଶାର ସ୍ଥାପତ୍ୟ ଚମତ୍କାରତାର ପ୍ରମାଣ। ମନ୍ଦିରଟି ଲିଙ୍ଗରାଜ ମନ୍ଦିରର ଉତ୍ତର-ପୂର୍ବରେ ଅବସ୍ଥିତ ଏବଂ ଏହାର ମୂର୍ତ୍ତି ଏବଂ ଅଳଙ୍କାରିତ ଡିଜାଇନ୍ ପାଇଁ ପ୍ରସିଦ୍ଧ।",
+        "ଏହି ମନ୍ଦିରର ନାମ 'ରାଜାରାଣୀ' ଏହାର ନିର୍ମାଣରେ ବ୍ୟବହୃତ ସୂକ୍ଷ୍ମ ଦାନାଦାର ହଳଦିଆ ବାଲୁକା ପଥରରୁ ଆସିଛି। ଏହି ବିଶେଷ ପଥର, ଯାହା ସ୍ଥାନୀୟ ଭାବରେ ରାଜରାନିଆ ନାମରେ ଜଣାଶୁଣା, ମନ୍ଦିରକୁ ଏକ ସ୍ୱତନ୍ତ୍ର ଆମ୍ବର ରଙ୍ଗ ପ୍ରଦାନ କରିଥାଏ।"
+      ]
+    },
+    architecturalComposition: {
+      title: "ସ୍ଥାପତ୍ୟ ଡିଜାଇନ୍",
+      primaryStructure: {
+        title: "ପ୍ରାଥମିକ ଗଠନ",
+        items: [
+          "ପୂର୍ବ ଦିଗ",
+          "ଗର୍ଭଗୃହ (ଦେଉଳ) ଉଚ୍ଚତା: ୧୭.୯ ମିଟର",
+          "ପଞ୍ଚରଥ ଯୋଜନା ଏବଂ ବକ୍ର ରେଖା ଉପର ଗଠନ",
+          "ତିନି-ମୋଲ୍ଡେଡ୍ ପ୍ଲାଟଫର୍ମ ଆଧାର"
+        ]
+      },
+      panchangaBada: {
+        title: "ପଞ୍ଚାଙ୍ଗ ବଡ଼ (ପାଞ୍ଚଟି ବିଭାଜନ)",
+        items: [
+          "୧. ପାଭାଗ (ଆଧାର)",
+          "୨. ତାଳଜଙ୍ଘ (ତଳ କାନ୍ଥ)",
+          "୩. ବନ୍ଧନ (ବନ୍ଧନ)",
+          "୪. ଉପରାଜଙ୍ଘ (ଉପର କାନ୍ଥ)",
+          "୫. ବରଣ୍ଡା (ଉପର ବିଭାଗ)"
+        ]
+      }
+    },
+    sculpturalHeritage: {
+      title: "ଭାସ୍କର୍ଯ୍ୟ ଐତିହ୍ୟ",
+      content: [
+        "ମନ୍ଦିରଟି ଏହାର ସମୃଦ୍ଧ ଭାସ୍କର୍ଯ୍ୟ ଐତିହ୍ୟ ପାଇଁ ପ୍ରସିଦ୍ଧ, ଯାହା ପ୍ରାଚୀନ ଓଡ଼ିଶାର ଶିଳ୍ପକାରମାନଙ୍କର କଳାତ୍ମକ ଦକ୍ଷତାକୁ ପ୍ରଦର୍ଶନ କରିଥାଏ।"
+      ],
+      items: [
+        "ନାଗ-ନାଗୀ ସ୍ତମ୍ଭ",
+        "ଶୈବୀ ଦ୍ୱାରପାଳ",
+        "ଲାକୁଳିଶା ମୂର୍ତ୍ତି",
+        "ନବଗ୍ରହ",
+        "ଅଷ୍ଟଦିକପାଳ (ଆଠ ଦିଗର ରକ୍ଷକ)"
+      ]
+    },
+    nayikas: {
+      title: "ନାୟିକା",
+      content: [
+        "ମନ୍ଦିର କାନ୍ଥରେ ନାୟିକାମାନଙ୍କ ମୂର୍ତ୍ତି ଅଛି, ଯାହା ବିଭିନ୍ନ ଭାବନା ଏବଂ କାର୍ଯ୍ୟକଳାପକୁ ଚିତ୍ରଣ କରିଥାଏ। ଏହି ମୂର୍ତ୍ତିଗୁଡ଼ିକରେ ପ୍ରାଚୀନ କାଳର ମହିଳାମାନଙ୍କର ଦୈନନ୍ଦିନ ଜୀବନ ଏବଂ ଅଭିବ୍ୟକ୍ତିର ଚିତ୍ରଣ ରହିଛି।"
+      ],
+      activities: {
+        title: "ଦୈନନ୍ଦିନ କାର୍ଯ୍ୟକଳାପ",
+        items: [
+          "ଶୌଚାଳୟରେ ଯତ୍ନ ନେବା",
+          "ଦର୍ପଣରେ ଦେଖିବା",
+          "ନୂପୁର କାଢ଼ିବା"
+        ]
+      },
+      interactions: {
+        title: "କଥାବାର୍ତ୍ତା",
+        items: [
+          "ନିଜ ସନ୍ତାନକୁ ସ୍ନେହ କରିବା",
+          "ପୋଷା ପକ୍ଷୀକୁ ସ୍ନେହ କରିବା",
+          "ସାଥୀମାନଙ୍କ ସହ କଥାବାର୍ତ୍ତା"
+        ]
+      },
+      expressions: {
+        title: "ଭାବନା",
+        items: [
+          "ବିଭିନ୍ନ ଭାବନାତ୍ମକ ଅବସ୍ଥା",
+          "ଗଛ ଡାଳ ଧରିବା",
+          "ସଙ୍ଗୀତ ବାଦ୍ୟଯନ୍ତ୍ର ବଜାଇବା"
+        ]
+      }
+    },
+    decorativeArt: {
+      title: "ସାଜସଜ୍ଜା କଳା",
+      content: [
+        "ମନ୍ଦିର କାନ୍ଥରେ ଜଟିଳ ସ୍କ୍ରୋଲ୍ ମୋଟିଫ୍ ଅଛି, ଯେଉଁଥିରେ ନମନୀୟ ପତ୍ର, ବିସ୍ତୃତ ଲତା ଏବଂ ଲତା ଅନ୍ତର୍ଭୁକ୍ତ। ପ୍ରତ୍ୟେକ ଡିଜାଇନରେ ସ୍ୱାଧୀନ ପତ୍ର ଢାଞ୍ଚା ଅଛି, ଯାହା ଏକ ଅନନ୍ୟ କଳାତ୍ମକ ପ୍ରକାଶନ ସୃଷ୍ଟି କରେ।"
+      ]
+    },
+    historicalDating: {
+      title: "ଐତିହାସିକ ତାରିଖ",
+      content: "ବିଦ୍ୱାନମାନେ ଏହାର ମୂର୍ତ୍ତି ଏବଂ ସ୍ଥାପତ୍ୟ ଶୈଳୀ ଉପରେ ଆଧାର କରି ମନ୍ଦିରକୁ ପ୍ରାୟ ୧୧ ଶତାବ୍ଦୀର ମଧ୍ୟଭାଗକୁ ତାରିଖ ଦିଅନ୍ତି, ଯାହା ଓଡ଼ିଶାର ମନ୍ଦିର ସ୍ଥାପତ୍ୟରେ ଏକ ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ସମୟ।"
+    },
+    gardenComplex: {
+      title: "ବଗିଚା ସଂକଳନ",
+      content: "ମନ୍ଦିର ଚାରିପାଖରେ ଏକ ସୁନ୍ଦର ଉଦ୍ୟାନ ସଂକଳନ ବିକଶିତ ହୋଇଛି, ଯାହା ଏହାର ପ୍ରାକୃତିକ ସୌନ୍ଦର୍ଯ୍ୟକୁ ବୃଦ୍ଧି କରେ ଏବଂ ପରିଦର୍ଶକମାନଙ୍କ ପାଇଁ ଏକ ଶାନ୍ତ ପରିବେଶ ପ୍ରଦାନ କରେ।"
+    }
+  }
+};
 
 function App() {
+  const [language, setLanguage] = useState<Language>('en');
+  const currentContent = content[language];
+
   return (
     <div className="min-h-screen bg-stone-50">
+      {/* Language Toggle */}
+      <div className="fixed top-4 right-4 z-50">
+        <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-2 flex gap-1">
+          <button
+            onClick={() => setLanguage('en')}
+            className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+              language === 'en' 
+                ? 'bg-amber-600 text-white' 
+                : 'text-gray-700 hover:bg-gray-100'
+            }`}
+          >
+            EN
+          </button>
+          <button
+            onClick={() => setLanguage('hi')}
+            className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+              language === 'hi' 
+                ? 'bg-amber-600 text-white' 
+                : 'text-gray-700 hover:bg-gray-100'
+            }`}
+          >
+            हिं
+          </button>
+          <button
+            onClick={() => setLanguage('or')}
+            className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+              language === 'or' 
+                ? 'bg-amber-600 text-white' 
+                : 'text-gray-700 hover:bg-gray-100'
+            }`}
+          >
+            ଓଡ଼ି
+          </button>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <div 
         className="h-screen relative flex items-center justify-center"
@@ -15,11 +386,11 @@ function App() {
       >
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative text-center text-white px-4">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4">Rajarani Temple</h1>
-          <p className="text-xl md:text-2xl mb-6">A Masterpiece of Odishan Architecture</p>
+          <h1 className="text-5xl md:text-7xl font-bold mb-4">{currentContent.title}</h1>
+          <p className="text-xl md:text-2xl mb-6">{currentContent.subtitle}</p>
           <div className="flex items-center justify-center gap-2 text-lg">
             <MapPin className="w-5 h-5" />
-            <span>20°15'N, 85°50'E • Bhubaneswar, Odisha</span>
+            <span>{currentContent.location}</span>
           </div>
           <div className="mt-12 animate-bounce">
             <ChevronDown className="w-8 h-8" />
@@ -31,14 +402,13 @@ function App() {
       <div className="max-w-7xl mx-auto px-4 py-16">
         {/* Introduction */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-gray-800">Historical Overview</h2>
+          <h2 className="text-3xl font-bold mb-6 text-gray-800">{currentContent.historicalOverview.title}</h2>
           <div className="prose prose-lg max-w-none text-gray-600">
-            <p className="mb-4">
-              The Rajarani temple, originally known as the Indresvara Siva Temple, stands as a testament to the architectural brilliance of ancient Odisha. Located in the north-east of Lingaraja Temple, this remarkable structure represents a unique experiment in temple architecture, distinguished by its sculptural excellence and ornate design.
-            </p>
-            <p className="mb-4">
-              The temple derives its current name "Rajarani" from the fine-grained yellowish sandstone used in its construction. This special stone, known locally as Rajarania, gives the temple its distinctive amber hue that has mellowed beautifully with time, enhancing its architectural splendor.
-            </p>
+            {currentContent.historicalOverview.content.map((paragraph, index) => (
+              <p key={index} className="mb-4">
+                {paragraph}
+              </p>
+            ))}
           </div>
         </div>
 
@@ -108,39 +478,32 @@ function App() {
 
         {/* Architectural Details */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
-          <h2 className="text-2xl font-bold mb-6 text-gray-800">Architectural Composition</h2>
+          <h2 className="text-2xl font-bold mb-6 text-gray-800">{currentContent.architecturalComposition.title}</h2>
           
           {/* Structure Overview */}
           <div className="grid md:grid-cols-2 gap-12 mb-12">
             <div>
-              <h3 className="text-xl font-semibold mb-4">Primary Structure</h3>
+              <h3 className="text-xl font-semibold mb-4">{currentContent.architecturalComposition.primaryStructure.title}</h3>
               <ul className="space-y-4 text-gray-600">
-                <li className="flex items-center gap-3">
-                  <Compass className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span>Eastern Orientation</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Architecture className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span>Sanctum (Deul) Height: 17.9 meters</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Columns className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span>Pancharatha Plan with Curvilinear Superstructure</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Ruler className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span>Three-Moulded Platform Base</span>
-                </li>
+                {currentContent.architecturalComposition.primaryStructure.items.map((item, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    <div className="w-5 h-5 text-amber-600 flex-shrink-0">
+                      {index === 0 && <Compass className="w-5 h-5" />}
+                      {index === 1 && <Architecture className="w-5 h-5" />}
+                      {index === 2 && <Columns className="w-5 h-5" />}
+                      {index === 3 && <Ruler className="w-5 h-5" />}
+                    </div>
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-4">Panchanga Bada (Five Divisions)</h3>
+              <h3 className="text-xl font-semibold mb-4">{currentContent.architecturalComposition.panchangaBada.title}</h3>
               <ul className="space-y-3 text-gray-600">
-                <li>1. Pabhaga (Base)</li>
-                <li>2. Talajangha (Lower Wall)</li>
-                <li>3. Bandhana (Binding)</li>
-                <li>4. Uparajangha (Upper Wall)</li>
-                <li>5. Baranda (Top Section)</li>
+                {currentContent.architecturalComposition.panchangaBada.items.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ul>
             </div>
           </div>
@@ -184,20 +547,18 @@ function App() {
 
         {/* Sculptural Details */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
-          <h2 className="text-2xl font-bold mb-6 text-gray-800">Sculptural Heritage</h2>
+          <h2 className="text-2xl font-bold mb-6 text-gray-800">{currentContent.sculpturalHeritage.title}</h2>
           <div className="prose prose-lg max-w-none text-gray-600">
-            <p className="mb-4">
-              The temple is renowned for its rich sculptural wealth, featuring several notable elements:
-            </p>
+            {currentContent.sculpturalHeritage.content.map((paragraph, index) => (
+              <p key={index} className="mb-4">
+                {paragraph}
+              </p>
+            ))}
             <ul className="space-y-3">
-              <li>• Naga-nagi stambha (Serpent Pillars)</li>
-              <li>• Saiva dwarapalas (Door Guardians) on entrance jambs</li>
-              <li>• Lakulisa sculpture on the entrance lintel</li>
-              <li>• Navagrahas (Nine Planets) on the architrave above the entrance</li>
+              {currentContent.sculpturalHeritage.items.map((item, index) => (
+                <li key={index}>• {item}</li>
+              ))}
             </ul>
-            <p className="mt-4">
-              The presence of Lakulisa and Saiva dwarapalas provides strong evidence of the temple's Saivite affiliation, marking it as a significant center of Shaivism in ancient Odisha.
-            </p>
           </div>
         </div>
 
@@ -234,34 +595,36 @@ function App() {
 
         {/* Nayikas Section */}
         <div className="bg-amber-50 rounded-lg shadow-lg p-8 mb-16">
-          <h2 className="text-2xl font-bold mb-6 text-gray-800">The Nayikas</h2>
+          <h2 className="text-2xl font-bold mb-6 text-gray-800">{currentContent.nayikas.title}</h2>
           <div className="prose prose-lg max-w-none text-gray-600">
-            <p className="mb-4">
-              The temple's celebrity status is largely attributed to its tall, slender, and sophisticated nayikas adorning the sanctum walls, particularly on the anurahapagas of the upara-jangha. These figures are carved in bold relief, depicting various scenes of daily life and emotional states:
-            </p>
+            {currentContent.nayikas.content.map((paragraph, index) => (
+              <p key={index} className="mb-4">
+                {paragraph}
+              </p>
+            ))}
             <div className="grid md:grid-cols-3 gap-6 mt-6">
               <div className="bg-white p-4 rounded-lg">
-                <h4 className="font-semibold mb-2">Daily Activities</h4>
+                <h4 className="font-semibold mb-2">{currentContent.nayikas.activities.title}</h4>
                 <ul>
-                  <li>Attending to toilet</li>
-                  <li>Looking into mirror</li>
-                  <li>Taking off anklet</li>
+                  {currentContent.nayikas.activities.items.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
                 </ul>
               </div>
               <div className="bg-white p-4 rounded-lg">
-                <h4 className="font-semibold mb-2">Interactions</h4>
+                <h4 className="font-semibold mb-2">{currentContent.nayikas.interactions.title}</h4>
                 <ul>
-                  <li>Fondling her child</li>
-                  <li>Caressing pet bird</li>
-                  <li>Playing instruments</li>
+                  {currentContent.nayikas.interactions.items.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
                 </ul>
               </div>
               <div className="bg-white p-4 rounded-lg">
-                <h4 className="font-semibold mb-2">Expressions</h4>
+                <h4 className="font-semibold mb-2">{currentContent.nayikas.expressions.title}</h4>
                 <ul>
-                  <li>Turning from ascetic</li>
-                  <li>Holding tree branch</li>
-                  <li>Various emotional states</li>
+                  {currentContent.nayikas.expressions.items.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -270,37 +633,13 @@ function App() {
 
         {/* Decorative Elements */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
-          <h2 className="text-2xl font-bold mb-6 text-gray-800">Decorative Artistry</h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Erotic Sculptures</h3>
-              <div className="prose prose-lg text-gray-600">
-                <p>
-                  The upara-jangha features notable erotic (mithuna) figures carved in high relief on its projecting pagas. These are complemented by other decorative motifs including:
-                </p>
-                <ul>
-                  <li>Vyala (mythical creatures)</li>
-                  <li>Jagrata (vigilant figures)</li>
-                  <li>Gajakranta (elephant motifs)</li>
-                </ul>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Floral Motifs</h3>
-              <div className="prose prose-lg text-gray-600">
-                <p>
-                  The temple's walls are adorned with intricate scroll motifs featuring:
-                </p>
-                <ul>
-                  <li>Lush foliages</li>
-                  <li>Detailed creepers</li>
-                  <li>Vanalata (forest vines)</li>
-                </ul>
-                <p>
-                  Each design contains independent foliage patterns, creating a unique artistic expression.
-                </p>
-              </div>
-            </div>
+          <h2 className="text-2xl font-bold mb-6 text-gray-800">{currentContent.decorativeArt.title}</h2>
+          <div className="prose prose-lg max-w-none text-gray-600">
+            {currentContent.decorativeArt.content.map((paragraph, index) => (
+              <p key={index} className="mb-4">
+                {paragraph}
+              </p>
+            ))}
           </div>
         </div>
 
@@ -309,19 +648,19 @@ function App() {
           <div className="bg-stone-100 rounded-lg shadow-lg p-8">
             <div className="flex items-center gap-3 mb-4">
               <Calendar className="w-6 h-6 text-amber-600" />
-              <h2 className="text-2xl font-bold text-gray-800">Historical Dating</h2>
+              <h2 className="text-2xl font-bold text-gray-800">{currentContent.historicalDating.title}</h2>
             </div>
             <p className="text-gray-600">
-              Based on its sculptural art and architectural style, scholars have dated this temple to approximately the mid-11th century AD, marking a significant period in Odishan temple architecture.
+              {currentContent.historicalDating.content}
             </p>
           </div>
           <div className="bg-stone-100 rounded-lg shadow-lg p-8">
             <div className="flex items-center gap-3 mb-4">
               <Leaf className="w-6 h-6 text-amber-600" />
-              <h2 className="text-2xl font-bold text-gray-800">Garden Complex</h2>
+              <h2 className="text-2xl font-bold text-gray-800">{currentContent.gardenComplex.title}</h2>
             </div>
             <p className="text-gray-600">
-              As part of its beautification programme, a stunning garden complex with thoughtful landscaping has been developed around the monument, enhancing its natural beauty and providing a serene environment for visitors.
+              {currentContent.gardenComplex.content}
             </p>
           </div>
         </div>
