@@ -379,7 +379,7 @@ function App() {
       <div 
         className="h-screen relative flex items-center justify-center"
         style={{
-          backgroundImage: 'url("https://resonancemedia.co.in/wp-content/uploads/2025/02/1-Cover-Photo-scaled.jpg")',
+          backgroundImage: 'url("https://resonancemedia.co.in.smmedia.co.in/wp-content/uploads/2025/02/1-Cover-Photo-scaled.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
@@ -409,6 +409,20 @@ function App() {
                 {paragraph}
               </p>
             ))}
+            
+            {/* YouTube Video */}
+            <div className="mt-6">
+              <iframe 
+                width="560" 
+                height="315" 
+                src="https://www.youtube.com/embed/7m5miX1vSBg?si=re70TIk3huKvbH9y" 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
         </div>
 
@@ -418,7 +432,7 @@ function App() {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="relative group">
               <img 
-                src="https://resonancemedia.co.in/wp-content/uploads/2025/02/2-Front-View-of-Rajarani-Temple-scaled.jpg"
+                src="https://resonancemedia.co.in.smmedia.co.in/wp-content/uploads/2025/02/2-Front-View-of-Rajarani-Temple-scaled.jpg"
                 alt="Front View of Rajarani Temple"
                 className="w-full h-80 object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-[1.02]"
               />
@@ -429,7 +443,7 @@ function App() {
             </div>
             <div className="relative group">
               <img 
-                src="https://resonancemedia.co.in/wp-content/uploads/2025/02/3-Panels-on-the-Deul.jpg"
+                src="https://resonancemedia.co.in.smmedia.co.in/wp-content/uploads/2025/02/3-Panels-on-the-Deul.jpg"
                 alt="Decorative Panels on the Deul"
                 className="w-full h-80 object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-[1.02]"
               />
@@ -440,7 +454,7 @@ function App() {
             </div>
             <div className="relative group">
               <img 
-                src="https://resonancemedia.co.in/wp-content/uploads/2025/02/4-Nayika.jpg"
+                src="https://resonancemedia.co.in.smmedia.co.in/wp-content/uploads/2025/02/4-Nayika.jpg"
                 alt="Nayika Sculpture"
                 className="w-full h-80 object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-[1.02]"
               />
