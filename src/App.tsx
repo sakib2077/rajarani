@@ -424,7 +424,7 @@ function App() {
             
             {/* YouTube Video */}
             <div className="mt-6">
-              {currentContent.video.frame}
+              {{currentContent.video.frame}}
             </div>
           </div>
         </div>
