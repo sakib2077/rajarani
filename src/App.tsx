@@ -423,8 +423,7 @@ function App() {
             ))}
             
             {/* YouTube Video */}
-            <div className="mt-6">
-              {{currentContent.video.frame}}
+           <div className="mt-6" dangerouslySetInnerHTML={{ __html: currentContent.video.frame }}>
             </div>
           </div>
         </div>
