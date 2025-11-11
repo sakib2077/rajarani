@@ -152,7 +152,7 @@ const content: Record<Language, ContentData> = {
       content: "A stunning garden complex with thoughtful landscaping has been developed around the monument, enhancing its natural beauty and providing a serene environment for visitors."
     },
     video: {
-      'frame': '<iframe width="560" height="315" src="https://www.youtube.com/embed/0fhk4ffiugE?si=jxX2bIQjzaBATI8k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+      'frame': '<iframe width="560" height="315" src="https://www.youtube.com/embed/z2HujO_Kl64?si=1wzYCD1iX31Zu-ah" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
     }
   },
   hi: {
@@ -246,7 +246,7 @@ const content: Record<Language, ContentData> = {
       content: "मंदिर के आसपास एक सुंदर उद्यान परिसर विकसित किया गया है, जो इसकी प्राकृतिक सुंदरता को बढ़ाता है और दर्शकों के लिए एक शांत वातावरण प्रदान करता है।"
     },
     video: {
-      'frame': '<iframe width="560" height="315" src="https://www.youtube.com/embed/0fhk4ffiugE?si=jxX2bIQjzaBATI8k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+      'frame': '<iframe width="560" height="315" src="https://www.youtube.com/embed/4qOT5l0pC9c?si=Sc43vT0OL7ATnpUn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
     }
   },
   or: {
