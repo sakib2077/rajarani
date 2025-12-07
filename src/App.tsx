@@ -473,22 +473,12 @@ function App() {
           <FeatureCard 
             icon={<Architecture />}
             title="Architectural Style"
-            description="Pancharatha design with curvilinear superstructure (rekha sikhara), similar to Khajuraho's Kandariya Mahadeva temple."
+            description="Pancharatha design with curvilinear superstructure (rekha sikhara)."
           />
           <FeatureCard 
             icon={<History />}
             title="Historical Significance"
             description="Originally known as Indresvara Siva Temple, representing a crucial phase in Odishan temple architecture."
-          />
-          <FeatureCard 
-            icon={<Camera />}
-            title="Sculptural Excellence"
-            description="Features exquisite sculptures including naga-nagi stambha and saiva dwarapalas, showcasing Saivite affiliation."
-          />
-          <FeatureCard 
-            icon={<Palette />}
-            title="Material Beauty"
-            description="Built with yellowish Rajarania sandstone, giving the temple its unique amber appearance."
           />
         </div>
 
@@ -530,8 +520,6 @@ function App() {
               <h3 className="text-xl font-semibold mb-4">Pabhaga Components</h3>
               <ul className="space-y-3 text-gray-600">
                 <li>• Khura (Base Moulding)</li>
-                <li>• Kumbha (Pot-Shaped Moulding)</li>
-                <li>• Patta (Flat Band)</li>
                 <li>• Kani (Recess)</li>
                 <li>• Basanta (Spring Season Moulding)</li>
               </ul>
@@ -539,7 +527,6 @@ function App() {
             <div>
               <h3 className="text-xl font-semibold mb-4">Superstructure Elements</h3>
               <ul className="space-y-3 text-gray-600">
-                <li>• Gandi (Main Tower)</li>
                 <li>• Angasikharas (Miniature Turrets)</li>
                 <li>• Amalaka (Fluted Disc)</li>
                 <li>• Kalasa (Crowning Vase)</li>
@@ -556,7 +543,7 @@ function App() {
               The Jagamohana presents a striking contrast to the ornate sanctum with its relatively plain appearance. While originally intended to be decorated, it appears to have been left incomplete. Unlike its rectangular predecessors in earlier temples, this Jagamohana features a square plan, marking an evolution in temple architecture.
             </p>
             <p className="mb-4">
-              The interior of the Jagamohana, like the sanctum, is devoid of ornamentation. Historical records indicate extensive conservation work was carried out on the Jagamohana before the Archaeological Survey of India assumed responsibility for the temple's preservation.
+              The interior of the Jagamohana, like the sanctum, is devoid of ornamentation.
             </p>
           </div>
         </div>
@@ -664,7 +651,7 @@ function App() {
           <div className="bg-stone-100 rounded-lg shadow-lg p-8">
             <div className="flex items-center gap-3 mb-4">
               <Calendar className="w-6 h-6 text-amber-600" />
-              <h2 className="text-2xl font-bold text-gray-800">{currentContent.historicalDating.title}</h2>
+              {/* <h2 className="text-2xl font-bold text-gray-800">{currentContent.historicalDating.title}</h2> */}
             </div>
             <p className="text-gray-600">
               {currentContent.historicalDating.content}
