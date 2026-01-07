@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Camera, History, Archive as Architecture, Compass, Columns, ChevronDown, Ruler, Palette, Leaf, Calendar, BookOpen } from 'lucide-react';
+import { MapPin, History, Archive as Architecture, Compass, Columns, ChevronDown, Ruler, Leaf, Calendar, BookOpen } from 'lucide-react';
 
 type Language = 'en' | 'hi' | 'or';
 
@@ -57,6 +57,15 @@ interface ContentData {
   };
   video: {
     frame: string;
+  }
+  gallery: {
+    title: string;
+    items: {
+      image: string;
+      alt: string;
+      title: string;
+      subtitle: string;
+    }[];
   }
 }
 
@@ -153,6 +162,29 @@ const content: Record<Language, ContentData> = {
     },
     video: {
       'frame': '<iframe width="560" height="315" src="https://www.youtube.com/embed/z2HujO_Kl64?si=1wzYCD1iX31Zu-ah" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+    },
+    gallery: {
+      title: "Temple Gallery",
+      items: [
+        {
+          image: "https://resonancemedia.co.in.smmedia.co.in/wp-content/uploads/2025/02/2-Front-View-of-Rajarani-Temple-scaled.jpg",
+          alt: "Front View of Rajarani Temple",
+          title: "Front View",
+          subtitle: "Majestic entrance of the temple"
+        },
+        {
+          image: "https://resonancemedia.co.in.smmedia.co.in/wp-content/uploads/2025/02/3-Panels-on-the-Deul.jpg",
+          alt: "Decorative Panels on the Deul",
+          title: "Deul Panels",
+          subtitle: "Intricate sculptural details"
+        },
+        {
+          image: "https://resonancemedia.co.in.smmedia.co.in/wp-content/uploads/2025/02/4-Nayika.jpg",
+          alt: "Nayika Sculpture",
+          title: "Nayika",
+          subtitle: "Graceful female figure sculpture"
+        }
+      ]
     }
   },
   hi: {
@@ -247,6 +279,29 @@ const content: Record<Language, ContentData> = {
     },
     video: {
       'frame': '<iframe width="560" height="315" src="https://www.youtube.com/embed/4qOT5l0pC9c?si=Sc43vT0OL7ATnpUn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+    },
+    gallery: {
+      title: "मंदिर गैलेरी",
+      items: [
+        {
+          image: "https://resonancemedia.co.in.smmedia.co.in/wp-content/uploads/2025/02/2-Front-View-of-Rajarani-Temple-scaled.jpg",
+          alt: "राजारानी मंदिर का मुख दृश्य",
+          title: "मुख दृश्य",
+          subtitle: "मंदिर का भव्य प्रवेश द्वार"
+        },
+        {
+          image: "https://resonancemedia.co.in.smmedia.co.in/wp-content/uploads/2025/02/3-Panels-on-the-Deul.jpg",
+          alt: "देउल पर सजावटी पैनल",
+          title: "देउल पैनल",
+          subtitle: "सूक्ष्म मूर्तिकला विवरण"
+        },
+        {
+          image: "https://resonancemedia.co.in.smmedia.co.in/wp-content/uploads/2025/02/4-Nayika.jpg",
+          alt: "नायिका मूर्ति",
+          title: "नायिका",
+          subtitle: "सुगठित स्त्री मूर्ति"
+        }
+      ]
     }
   },
   or: {
@@ -254,14 +309,15 @@ const content: Record<Language, ContentData> = {
     subtitle: "ଓଡିଶା ସ୍ଥାପତ୍ୟର ଉତ୍କୃଷ୍ଟ ଉଦାହରଣ",
     location: "20°15'N, 85°50'E • ଭୁବନେଶ୍ୱର, ଓଡ଼ିଶା",
     historicalOverview: {
-      title: "ଐତିହାସିକ ସାରାଂଶ",
+      title: "ଐତିହାସିକ ବିହଙ୍ଗାବଲୋକନ",
       content: [
         "ପୂର୍ବରୁ ଇନ୍ଦ୍ରେଶ୍ୱର ଶିବ ମନ୍ଦିର ଭାବରେ ଜଣାଶୁଣା ରାଜରାଣୀ ମନ୍ଦିର, ପ୍ରାଚୀନ ଓଡ଼ିଶାର ସ୍ଥାପତ୍ୟ ଚମତ୍କାରତାର ପ୍ରମାଣ। ମନ୍ଦିରଟି ଲିଙ୍ଗରାଜ ମନ୍ଦିରର ଉତ୍ତର-ପୂର୍ବରେ ଅବସ୍ଥିତ ଏବଂ ଏହାର ମୂର୍ତ୍ତି ଏବଂ ଅଳଙ୍କାରିତ ଡିଜାଇନ୍ ପାଇଁ ପ୍ରସିଦ୍ଧ।",
-        "ଏହି ମନ୍ଦିରର ନାମ 'ରାଜାରାଣୀ' ଏହାର ନିର୍ମାଣରେ ବ୍ୟବହୃତ ସୂକ୍ଷ୍ମ ଦାନାଦାର ହଳଦିଆ ବାଲୁକା ପଥରରୁ ଆସିଛି। ଏହି ବିଶେଷ ପଥର, ଯାହା ସ୍ଥାନୀୟ ଭାବରେ ରାଜରାନିଆ ନାମରେ ଜଣାଶୁଣା, ମନ୍ଦିରକୁ ଏକ ସ୍ୱତନ୍ତ୍ର ଆମ୍ବର ରଙ୍ଗ ପ୍ରଦାନ କରିଥାଏ।"
+        "ଏହି ମନ୍ଦିରର ନାମ 'ରାଜାରାଣୀ' ଏହାର ନିର୍ମାଣରେ ବ୍ୟବହୃତ ସୂକ୍ଷ୍ମ ଦାନାଦାର ହଳଦିଆ ବାଲୁକା ପଥରରୁ ଆସିଛି। ଏହି ବିଶେଷ ପଥର, ଯାହା ସ୍ଥାନୀୟ ଭାବରେ ରାଜରାନିଆ ନାମରେ ଜଣାଶୁଣା, ମନ୍ଦିରକୁ ଏକ ସ୍ୱତନ୍ତ୍ର ଆମ୍ବର ରଙ୍ଗ ପ୍ରଦାନ କରିଥାଏ।",
+        "ଏହା ଲିଙ୍ଗରାଜ ମନ୍ଦିରର ଉତ୍ତର-ପୂର୍ବେ ଅବସ୍ଥିତ ଏକ ଅନନ୍ୟ ପ୍ରୟୋଗଧର୍ମୀ ମନ୍ଦିର, ଯାହାର ମୂର୍ତ୍ତି-ସୌନ୍ଦର୍ଯ୍ୟ ଓ ଅଳଙ୍କାର ଶିଳ୍ପ ଅତ୍ୟନ୍ତ ଆକର୍ଷକ।"
       ]
     },
     architecturalComposition: {
-      title: "ସ୍ଥାପତ୍ୟ ଡିଜାଇନ୍",
+      title: "ସ୍ଥାପତ୍ୟ ବିନ୍ୟାସ",
       primaryStructure: {
         title: "ପ୍ରାଥମିକ ଗଠନ",
         items: [
@@ -285,7 +341,8 @@ const content: Record<Language, ContentData> = {
     sculpturalHeritage: {
       title: "ଭାସ୍କର୍ଯ୍ୟ ଐତିହ୍ୟ",
       content: [
-        "ମନ୍ଦିରଟି ଏହାର ସମୃଦ୍ଧ ଭାସ୍କର୍ଯ୍ୟ ଐତିହ୍ୟ ପାଇଁ ପ୍ରସିଦ୍ଧ, ଯାହା ପ୍ରାଚୀନ ଓଡ଼ିଶାର ଶିଳ୍ପକାରମାନଙ୍କର କଳାତ୍ମକ ଦକ୍ଷତାକୁ ପ୍ରଦର୍ଶନ କରିଥାଏ।"
+        "ମନ୍ଦିରଟି ଏହାର ସମୃଦ୍ଧ ଭାସ୍କର୍ଯ୍ୟ ଐତିହ୍ୟ ପାଇଁ ପ୍ରସିଦ୍ଧ, ଯାହା ପ୍ରାଚୀନ ଓଡ଼ିଶାର ଶିଳ୍ପକାରମାନଙ୍କର କଳାତ୍ମକ ଦକ୍ଷତାକୁ ପ୍ରଦର୍ଶନ କରିଥାଏ।",
+        "ଏଠାରେ ନାଗ-ନାଗୀ ସ୍ତମ୍ଭ, ସୈବ ଦ୍ୱାରପାଳ, ଲକୁଳିଶା, ନବଗ୍ରହ ଏବଂ ଅଷ୍ଟଦିକପାଳ ଭଳି ମହତ୍ୱପୂର୍ଣ୍ଣ ମୂର୍ତ୍ତି ସ୍ଥାନ ପାଇଛି।"
       ],
       items: [
         "ନାଗ-ନାଗୀ ସ୍ତମ୍ଭ",
@@ -298,7 +355,8 @@ const content: Record<Language, ContentData> = {
     nayikas: {
       title: "ନାୟିକା",
       content: [
-        "ମନ୍ଦିର କାନ୍ଥରେ ନାୟିକାମାନଙ୍କ ମୂର୍ତ୍ତି ଅଛି, ଯାହା ବିଭିନ୍ନ ଭାବନା ଏବଂ କାର୍ଯ୍ୟକଳାପକୁ ଚିତ୍ରଣ କରିଥାଏ। ଏହି ମୂର୍ତ୍ତିଗୁଡ଼ିକରେ ପ୍ରାଚୀନ କାଳର ମହିଳାମାନଙ୍କର ଦୈନନ୍ଦିନ ଜୀବନ ଏବଂ ଅଭିବ୍ୟକ୍ତିର ଚିତ୍ରଣ ରହିଛି।"
+        "ମନ୍ଦିର କାନ୍ଥରେ ନାୟିକାମାନଙ୍କ ମୂର୍ତ୍ତି ଅଛି, ଯାହା ବିଭିନ୍ନ ଭାବନା ଏବଂ କାର୍ଯ୍ୟକଳାପକୁ ଚିତ୍ରଣ କରିଥାଏ। ଏହି ମୂର୍ତ୍ତିଗୁଡ଼ିକରେ ପ୍ରାଚୀନ କାଳର ମହିଳାମାନଙ୍କର ଦୈନନ୍ଦିନ ଜୀବନ ଏବଂ ଅଭିବ୍ୟକ୍ତିର ଚିତ୍ରଣ ରହିଛି।",
+        "ଉଚ୍ଚ, ସୁକୁମାର ଏବଂ ସଂସ୍କାରିତ ନାୟିକାମୂର୍ତ୍ତିମାନେ ମନ୍ଦିରକୁ ବିଶେଷ ପ୍ରସିଦ୍ଧି ଦେଇଛନ୍ତି।"
       ],
       activities: {
         title: "ଦୈନନ୍ଦିନ କାର୍ଯ୍ୟକଳାପ",
@@ -326,9 +384,10 @@ const content: Record<Language, ContentData> = {
       }
     },
     decorativeArt: {
-      title: "ସାଜସଜ୍ଜା କଳା",
+      title: "ଅଳଙ୍କାରିତ କଳା",
       content: [
-        "ମନ୍ଦିର କାନ୍ଥରେ ଜଟିଳ ସ୍କ୍ରୋଲ୍ ମୋଟିଫ୍ ଅଛି, ଯେଉଁଥିରେ ନମନୀୟ ପତ୍ର, ବିସ୍ତୃତ ଲତା ଏବଂ ଲତା ଅନ୍ତର୍ଭୁକ୍ତ। ପ୍ରତ୍ୟେକ ଡିଜାଇନରେ ସ୍ୱାଧୀନ ପତ୍ର ଢାଞ୍ଚା ଅଛି, ଯାହା ଏକ ଅନନ୍ୟ କଳାତ୍ମକ ପ୍ରକାଶନ ସୃଷ୍ଟି କରେ।"
+        "ମନ୍ଦିର କାନ୍ଥରେ ଜଟିଳ ସ୍କ୍ରୋଲ୍ ମୋଟିଫ୍ ଅଛି, ଯେଉଁଥିରେ ନମନୀୟ ପତ୍ର, ବିସ୍ତୃତ ଲତା ଏବଂ ଲତା ଅନ୍ତର୍ଭୁକ୍ତ। ପ୍ରତ୍ୟେକ ଡିଜାଇନରେ ସ୍ୱାଧୀନ ପତ୍ର ଢାଞ୍ଚା ଅଛି, ଯାହା ଏକ ଅନନ୍ୟ କଳାତ୍ମକ ପ୍ରକାଶନ ସୃଷ୍ଟି କରେ।",
+        "କାନ୍ଥର ଲତା-ବନଲତା ମୋଟିଫ୍‌ରେ ସ୍ୱାଧୀନ ପତ୍ର ରୂପାୟଣ ଦେଖାଯାଏ।"
       ]
     },
     historicalDating: {
@@ -336,11 +395,34 @@ const content: Record<Language, ContentData> = {
       content: "ବିଦ୍ୱାନମାନେ ଏହାର ମୂର୍ତ୍ତି ଏବଂ ସ୍ଥାପତ୍ୟ ଶୈଳୀ ଉପରେ ଆଧାର କରି ମନ୍ଦିରକୁ ପ୍ରାୟ ୧୧ ଶତାବ୍ଦୀର ମଧ୍ୟଭାଗକୁ ତାରିଖ ଦିଅନ୍ତି, ଯାହା ଓଡ଼ିଶାର ମନ୍ଦିର ସ୍ଥାପତ୍ୟରେ ଏକ ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ସମୟ।"
     },
     gardenComplex: {
-      title: "ବଗିଚା ସଂକଳନ",
+      title: "ବଗିଚା ଉଦ୍ୟାନକରଣ",
       content: "ମନ୍ଦିର ଚାରିପାଖରେ ଏକ ସୁନ୍ଦର ଉଦ୍ୟାନ ସଂକଳନ ବିକଶିତ ହୋଇଛି, ଯାହା ଏହାର ପ୍ରାକୃତିକ ସୌନ୍ଦର୍ଯ୍ୟକୁ ବୃଦ୍ଧି କରେ ଏବଂ ପରିଦର୍ଶକମାନଙ୍କ ପାଇଁ ଏକ ଶାନ୍ତ ପରିବେଶ ପ୍ରଦାନ କରେ।"
     },
     video: {
       'frame': '<iframe width="560" height="315" src="https://www.youtube.com/embed/0fhk4ffiugE?si=jxX2bIQjzaBATI8k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+    },
+    gallery: {
+      title: "ମନ୍ଦିର ଗ୍ୟାଲେରୀ",
+      items: [
+        {
+          image: "https://resonancemedia.co.in.smmedia.co.in/wp-content/uploads/2025/02/2-Front-View-of-Rajarani-Temple-scaled.jpg",
+          alt: "ରାଜାରାଣୀ ମନ୍ଦିରର ସାମ୍ନା ଦୃଶ୍ୟ",
+          title: "ସାମ୍ନା ଦୃଶ୍ୟ",
+          subtitle: "ମନ୍ଦିରର ଅତି ଅଲଙ୍କାରିତ ପ୍ରବେଶଦ୍ୱାର"
+        },
+        {
+          image: "https://resonancemedia.co.in.smmedia.co.in/wp-content/uploads/2025/02/3-Panels-on-the-Deul.jpg",
+          alt: "ଦେଉଳରେ ସୌନ୍ଦର୍ଯ୍ୟମୟ ପ୍ୟାନେଲ",
+          title: "ଦେଉଳ ପ୍ୟାନେଲ",
+          subtitle: "ସୁକ୍ଷ୍ମ ଭାସ୍କର୍ଯ୍ୟ ସୂଚନା"
+        },
+        {
+          image: "https://resonancemedia.co.in.smmedia.co.in/wp-content/uploads/2025/02/4-Nayika.jpg",
+          alt: "ନାୟିକା ମୂର୍ତ୍ତି",
+          title: "ନାୟିକା",
+          subtitle: "ସୁନ୍ଦର ନାୟିକା ମୂର୍ତ୍ତିର ଦୃଶ୍ୟ"
+        }
+      ]
     }
   }
 };
@@ -430,41 +512,21 @@ function App() {
 
         {/* Image Gallery */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-gray-800">Temple Gallery</h2>
+          <h2 className="text-3xl font-bold mb-6 text-gray-800">{currentContent.gallery.title}</h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="relative group">
-              <img 
-                src="https://resonancemedia.co.in.smmedia.co.in/wp-content/uploads/2025/02/2-Front-View-of-Rajarani-Temple-scaled.jpg"
-                alt="Front View of Rajarani Temple"
-                className="w-full h-80 object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-[1.02]"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 rounded-b-lg">
-                <h3 className="text-lg font-semibold">Front View</h3>
-                <p className="text-sm">Majestic entrance of the temple</p>
+            {currentContent.gallery.items.map((g, i) => (
+              <div key={i} className="relative group">
+                <img 
+                  src={g.image}
+                  alt={g.alt}
+                  className="w-full h-80 object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-[1.02]"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 rounded-b-lg">
+                  <h3 className="text-lg font-semibold">{g.title}</h3>
+                  <p className="text-sm">{g.subtitle}</p>
+                </div>
               </div>
-            </div>
-            <div className="relative group">
-              <img 
-                src="https://resonancemedia.co.in.smmedia.co.in/wp-content/uploads/2025/02/3-Panels-on-the-Deul.jpg"
-                alt="Decorative Panels on the Deul"
-                className="w-full h-80 object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-[1.02]"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 rounded-b-lg">
-                <h3 className="text-lg font-semibold">Deul Panels</h3>
-                <p className="text-sm">Intricate sculptural details</p>
-              </div>
-            </div>
-            <div className="relative group">
-              <img 
-                src="https://resonancemedia.co.in.smmedia.co.in/wp-content/uploads/2025/02/4-Nayika.jpg"
-                alt="Nayika Sculpture"
-                className="w-full h-80 object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-[1.02]"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 rounded-b-lg">
-                <h3 className="text-lg font-semibold">Nayika</h3>
-                <p className="text-sm">Graceful female figure sculpture</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
