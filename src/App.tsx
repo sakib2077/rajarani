@@ -21,6 +21,16 @@ interface ContentData {
       title: string;
       items: string[];
     };
+    detailedFeatures: {
+      pabhaga: {
+        title: string;
+        items: string[];
+      };
+      superstructure: {
+        title: string;
+        items: string[];
+      };
+    };
   };
   sculpturalHeritage: {
     title: string;
@@ -66,7 +76,41 @@ interface ContentData {
       title: string;
       subtitle: string;
     }[];
-  }
+  };
+  keyFeatures: {
+    architecture: {
+      title: string;
+      description: string;
+    };
+    history: {
+      title: string;
+      description: string;
+    };
+  };
+  jagamohana: {
+    title: string;
+    content: string[];
+  };
+  sculpturalMasterpieces: {
+    title: string;
+    astadikpalas: {
+      title: string;
+      content: string;
+      items: string[];
+    };
+    divineScenes: {
+      title: string;
+      content: string;
+      items: string[];
+    };
+  };
+  references: {
+    title: string;
+    items: string[];
+  };
+  footer: {
+    text: string;
+  };
 }
 
 const content: Record<Language, ContentData> = {
@@ -101,6 +145,24 @@ const content: Record<Language, ContentData> = {
           "4. Uparajangha (Upper Wall)",
           "5. Baranda (Top Section)"
         ]
+      },
+      detailedFeatures: {
+        pabhaga: {
+          title: "Pabhaga Components",
+          items: [
+            "Khura (Base Moulding)",
+            "Kani (Recess)",
+            "Basanta (Spring Season Moulding)"
+          ]
+        },
+        superstructure: {
+          title: "Superstructure Elements",
+          items: [
+            "Angasikharas (Miniature Turrets)",
+            "Amalaka (Fluted Disc)",
+            "Kalasa (Crowning Vase)"
+          ]
+        }
       }
     },
     sculpturalHeritage: {
@@ -185,6 +247,57 @@ const content: Record<Language, ContentData> = {
           subtitle: "Graceful female figure sculpture"
         }
       ]
+    },
+    keyFeatures: {
+      architecture: {
+        title: "Architectural Style",
+        description: "Pancharatha design with curvilinear superstructure (rekha sikhara)."
+      },
+      history: {
+        title: "Historical Significance",
+        description: "Originally known as Indresvara Siva Temple, representing a crucial phase in Odishan temple architecture."
+      }
+    },
+    jagamohana: {
+      title: "The Jagamohana (Porch)",
+      content: [
+        "The Jagamohana presents a striking contrast to the ornate sanctum with its relatively plain appearance. While originally intended to be decorated, it appears to have been left incomplete. Unlike its rectangular predecessors in earlier temples, this Jagamohana features a square plan, marking an evolution in temple architecture.",
+        "The interior of the Jagamohana, like the sanctum, is devoid of ornamentation."
+      ]
+    },
+    sculpturalMasterpieces: {
+      title: "Sculptural Masterpieces",
+      astadikpalas: {
+        title: "Astadikpalas (Guardians)",
+        content: "The temple's central facade features outstanding standing astadikpalas on the jangha portion. These guardians, clad in diaphanous drapery, stand gracefully on lotus pedestals with their mounts below. The Varuna figure is particularly remarkable for its:",
+        items: [
+          "Intricate body ornamentation",
+          "Elaborate coiffure",
+          "Expressive facial features"
+        ]
+      },
+      divineScenes: {
+        title: "Divine Scenes",
+        content: "Notable divine depictions include:",
+        items: [
+          "Marriage scene of Siva",
+          "Nataraja in dance pose",
+          "Parvati in various forms"
+        ]
+      }
+    },
+    references: {
+      title: "References",
+      items: [
+        "D. Mitra, Bhubaneswar, ASI, New Delhi, 1958.",
+        "K. C. Panigrahi, Archaeological Remains at Bhubaneswar, Calcutta, 1961.",
+        "K. S. Behera, Temples of Orissa, Odisha Sahitya Academy, Bhubaneswar, 1993.",
+        "T. E. Donaldson, Hindu Temple Art of Orissa, Vol. II, E. J. Brill, Leiden, 1986.",
+        "C. L. Fabin, History of Art of Orissa, Calcutta, 1974."
+      ]
+    },
+    footer: {
+      text: "© {year} Rajarani Temple Heritage Site. Protected by Archaeological Survey of India."
     }
   },
   hi: {
@@ -218,6 +331,24 @@ const content: Record<Language, ContentData> = {
           "4. उपरजंघा (ऊपरी दीवार)", 
           "5. बारंडा (शीर्ष खंड)"
         ]
+      },
+      detailedFeatures: {
+        pabhaga: {
+          title: "पाभाग के घटक",
+          items: [
+            "खुरा (आधार मोल्डिंग)",
+            "कणि (अवकाश)",
+            "बसंत (वसंत ऋतु मोल्डिंग)"
+          ]
+        },
+        superstructure: {
+          title: "अधिरचना के तत्व",
+          items: [
+            "अंगशिखर (लघु बुर्ज)",
+            "आमलक (नालीदार डिस्क)",
+            "कलश (शिखर कलश)"
+          ]
+        }
       }
     },
     sculpturalHeritage: {
@@ -302,6 +433,57 @@ const content: Record<Language, ContentData> = {
           subtitle: "सुगठित स्त्री मूर्ति"
         }
       ]
+    },
+    keyFeatures: {
+      architecture: {
+        title: "वास्तुकला शैली",
+        description: "पंचरथ डिजाइन और वक्र रेखीय अधिरचना (रेखा शिखर)।"
+      },
+      history: {
+        title: "ऐतिहासिक महत्व",
+        description: "मूल रूप से इंद्रेश्वर शिव मंदिर के रूप में जाना जाता है, जो ओडिशा मंदिर वास्तुकला में एक महत्वपूर्ण चरण का प्रतिनिधित्व करता है।"
+      }
+    },
+    jagamohana: {
+      title: "जगमोहन (पोर्च)",
+      content: [
+        "जगमोहन अलंकृत गर्भगृह के विपरीत अपनी अपेक्षाकृत सादी बनावट के कारण एक आकर्षक कंट्रास्ट प्रस्तुत करता है। हालांकि इसे सजाने का मूल इरादा था, लेकिन ऐसा लगता है कि इसे अधूरा छोड़ दिया गया था। पहले के मंदिरों में आयताकार जगमोहन के विपरीत, यह जगमोहन एक वर्गाकार योजना पर आधारित है, जो मंदिर वास्तुकला में एक विकास को दर्शाता है।",
+        "जगमोहन का आंतरिक भाग, गर्भगृह की तरह ही, अलंकरण रहित है।"
+      ]
+    },
+    sculpturalMasterpieces: {
+      title: "मूर्तिकला के उत्कृष्ट नमूने",
+      astadikpalas: {
+        title: "अष्टदिक्पाल (रक्षक)",
+        content: "मंदिर के मुख्य भाग पर जंघा खंड में उत्कृष्ट खड़े अष्टदिक्पालों का चित्रण है। पारभासी वस्त्रों से सजे ये रक्षक अपने वाहनों के साथ कमल के आसन पर शान से खड़े हैं। वरुण की मूर्ति विशेष रूप से निम्नलिखित के लिए उल्लेखनीय है:",
+        items: [
+          "जटिल शारीरिक अलंकरण",
+          "विस्तृत केश विन्यास",
+          "अभिव्यंजक चेहरे की विशेषताएं"
+        ]
+      },
+      divineScenes: {
+        title: "दिव्य दृश्य",
+        content: "उल्लेखनीय दिव्य चित्रणों में शामिल हैं:",
+        items: [
+          "शिव का विवाह दृश्य",
+          "नृत्य मुद्रा में नटराज",
+          "विभिन्न रूपों में पार्वती"
+        ]
+      }
+    },
+    references: {
+      title: "संदर्भ",
+      items: [
+        "डी. मित्रा, भुवनेश्वर, ए.एस.आई. (ASI), नई दिल्ली, 1958.",
+        "के. सी. पाणिग्रही, आर्कियोलॉजिकल रिमेंस एट भुवनेश्वर, कलकत्ता, 1961.",
+        "के. एस. बेहरा, टेम्पल्स ऑफ उड़ीसा, ओडिशा साहित्य अकादमी, भुवनेश्वर, 1993.",
+        "टी. ई. डोनाल्डसन, हिंदू टेम्पल आर्ट ऑफ उड़ीसा, वॉल्यूम II, ई. जे. ब्रिल, लीडेन, 1986.",
+        "सी. एल. फैबिन, हिस्ट्री ऑफ आर्ट ऑफ उड़ीसा, कलकत्ता, 1974."
+      ]
+    },
+    footer: {
+      text: "© {year} राजारानी मंदिर विरासत स्थल। भारतीय पुरातत्व सर्वेक्षण द्वारा संरक्षित।"
     }
   },
   or: {
@@ -336,6 +518,24 @@ const content: Record<Language, ContentData> = {
           "୪. ଉପରାଜଙ୍ଘ (ଉପର କାନ୍ଥ)",
           "୫. ବରଣ୍ଡା (ଉପର ବିଭାଗ)"
         ]
+      },
+      detailedFeatures: {
+        pabhaga: {
+          title: "ପାଭାଗର ଅଂଶ",
+          items: [
+            "ଖୁରା (ଆଧାର ମୋଲଡିଂ)",
+            "କଣି (ଖାଲ)",
+            "ବସନ୍ତ (ବସନ୍ତ ଋତୁ ମୋଲଡିଂ)"
+          ]
+        },
+        superstructure: {
+          title: "ଉପରିଭାଗର ଉପାଦାନ",
+          items: [
+            "ଅଙ୍ଗଶିଖର (କ୍ଷୁଦ୍ର ଗମ୍ବୁଜ)",
+            "ଅଁଳା (ଖୋଦିତ ଚକ୍ର)",
+            "କଳସ (ଚୂଡ଼ାମଣି ପାତ୍ର)"
+          ]
+        }
       }
     },
     sculpturalHeritage: {
@@ -423,6 +623,57 @@ const content: Record<Language, ContentData> = {
           subtitle: "ସୁନ୍ଦର ନାୟିକା ମୂର୍ତ୍ତିର ଦୃଶ୍ୟ"
         }
       ]
+    },
+    keyFeatures: {
+      architecture: {
+        title: "ସ୍ଥାପତ୍ୟ ଶୈଳୀ",
+        description: "ପଞ୍ଚରଥ ଗଠନ ଏବଂ ବକ୍ର ରେଖା ଉପର ଗଠନ (ରେଖା ଶିଖର)।"
+      },
+      history: {
+        title: "ଐତିହାସିକ ଗୁରୁତ୍ୱ",
+        description: "ପୂର୍ବରୁ ଇନ୍ଦ୍ରେଶ୍ୱର ଶିବ ମନ୍ଦିର ଭାବରେ ଜଣାଶୁଣା, ଯାହା ଓଡ଼ିଶା ମନ୍ଦିର ସ୍ଥାପତ୍ୟର ଏକ ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ସମୟକୁ ପ୍ରତିନିଧିତ୍ୱ କରେ।"
+      }
+    },
+    jagamohana: {
+      title: "ଜଗମୋହନ (ପୋର୍ଟିକୋ)",
+      content: [
+        "ଜଗମୋହନ ଏହାର ସାଧାରଣ ରୂପ ସହିତ ଅଳଙ୍କାରିତ ଗର୍ଭଗୃହରେ ଏକ ଆକର୍ଷଣୀୟ ବିପରୀତ ଭାବ ପ୍ରଦାନ କରେ। ଯଦିଓ ଏହାକୁ ସଜାଇବା ପାଇଁ ମୂଳତଃ ଉଦ୍ଦେଶ୍ୟ ରଖାଯାଇଥିଲା, ଏହା ଅସମ୍ପୂର୍ଣ୍ଣ ରହିଥିବା ପରି ମନେହୁଏ। ପୂର୍ବ ମନ୍ଦିରଗୁଡ଼ିକରେ ଥିବା ଆୟତାକାର ଜଗମୋହନ ପରିବର୍ତ୍ତେ, ଏହି ଜଗମୋହନ ଏକ ବର୍ଗାକାର ଯୋଜନା ବିଶିଷ୍ଟ, ଯାହା ମନ୍ଦିର ସ୍ଥାପତ୍ୟରେ ଏକ ବିବର୍ତ୍ତନକୁ ଚିହ୍ନିତ କରେ।",
+        "ଗର୍ଭଗୃହ ପରି ଜଗମୋହନର ଭିତର ଭାଗ ମଧ୍ୟ ଅଳଙ୍କାର ଶୂନ୍ୟ।"
+      ]
+    },
+    sculpturalMasterpieces: {
+      title: "ଭାସ୍କର୍ଯ୍ୟର ଶ୍ରେଷ୍ଠ ନିଦର୍ଶନ",
+      astadikpalas: {
+        title: "ଅଷ୍ଟଦିକପାଳ (ରକ୍ଷକ)",
+        content: "ମନ୍ଦିରର ମୁଖ୍ୟ ଭାଗରେ ଥିବା ଜଙ୍ଘା ଅଂଶରେ ଉତ୍କୃଷ୍ଟ ଅଷ୍ଟଦିକପାଳମାନଙ୍କର ମୂର୍ତ୍ତି ରହିଛି। ସୂକ୍ଷ୍ମ ବସ୍ତ୍ର ପରିହିତ ଏହି ରକ୍ଷକମାନେ ପଦ୍ମ ଆସନ ଉପରେ ସେମାନଙ୍କ ବାହନ ସହିତ ଠିଆ ହୋଇଛନ୍ତି। ବରୁଣଙ୍କ ମୂର୍ତ୍ତି ବିଶେଷ ଭାବରେ ନିମ୍ନଲିଖିତ କାରଣ ପାଇଁ ଉଲ୍ଲେଖନୀୟ:",
+        items: [
+          "ଜଟିଳ ଶାରୀରିକ ଅଳଙ୍କାର",
+          "ବିସ୍ତୃତ କେଶ ବିନ୍ୟାସ",
+          "ଭାବପୂର୍ଣ୍ଣ ଚେହେରା"
+        ]
+      },
+      divineScenes: {
+        title: "ଦୈବୀ ଦୃଶ୍ୟ",
+        content: "ଉଲ୍ଲେଖନୀୟ ଦୈବୀ ଚିତ୍ରଣଗୁଡ଼ିକ ମଧ୍ୟରେ ଅନ୍ତର୍ଭୁକ୍ତ:",
+        items: [
+          "ଶିବଙ୍କ ବିବାହ ଦୃଶ୍ୟ",
+          "ନୃତ୍ୟ ମୁଦ୍ରାରେ ନଟରାଜ",
+          "ପାର୍ବତୀଙ୍କ ବିଭିନ୍ନ ରୂପ"
+        ]
+      }
+    },
+    references: {
+      title: "ଆଧାର ଗ୍ରନ୍ଥାବଳୀ",
+      items: [
+        "ଡି. ମିତ୍ର, ଭୁବନେଶ୍ୱର, ASI, ନୂଆଦିଲ୍ଲୀ, ୧୯୫୮।",
+        "କେ. ସି. ପାଣିଗ୍ରାହୀ, ଆର୍କିଓଲୋଜିକାଲ୍ ରିମେନ୍ସ ଆଟ୍ ଭୁବନେଶ୍ୱର, କଲିକତା, ୧୯୬୧।",
+        "କେ. ଏସ୍. ବେହେରା, ଟେମ୍ପଲ୍ସ ଅଫ୍ ଓଡ଼ିଶା, ଓଡ଼ିଶା ସାହିତ୍ୟ ଏକାଡେମୀ, ଭୁବନେଶ୍ୱର, ୧୯୯୩।",
+        "ଟି. ଇ. ଡୋନାଲ୍ଡସନ, ହିନ୍ଦୁ ଟେମ୍ପଲ୍ ଆର୍ଟ ଅଫ୍ ଓଡ଼ିଶା, ଭଲ୍ୟୁମ-II, ଇ. ଜେ. ବ୍ରିଲ୍, ଲାଇଡେନ୍, ୧୯୮୬।",
+        "ସି. ଏଲ୍. ଫ୍ୟାବିନ୍, ହିଷ୍ଟ୍ରି ଅଫ୍ ଆର୍ଟ ଅଫ୍ ଓଡ଼ିଶା, କଲିକତା, ୧୯୭୪।"
+      ]
+    },
+    footer: {
+      text: "© {year} ରାଜାରାଣୀ ମନ୍ଦିର ଐତିହ୍ୟ ସ୍ଥଳ। ଭାରତୀୟ ପ୍ରତ୍ନତତ୍ତ୍ୱ ବିଭାଗ ଦ୍ୱାରା ସଂରକ୍ଷିତ।"
     }
   }
 };
@@ -534,13 +785,13 @@ function App() {
         <div className="grid md:grid-cols-4 gap-8 mb-16">
           <FeatureCard 
             icon={<Architecture />}
-            title="Architectural Style"
-            description="Pancharatha design with curvilinear superstructure (rekha sikhara)."
+            title={currentContent.keyFeatures.architecture.title}
+            description={currentContent.keyFeatures.architecture.description}
           />
           <FeatureCard 
             icon={<History />}
-            title="Historical Significance"
-            description="Originally known as Indresvara Siva Temple, representing a crucial phase in Odishan temple architecture."
+            title={currentContent.keyFeatures.history.title}
+            description={currentContent.keyFeatures.history.description}
           />
         </div>
 
@@ -579,19 +830,19 @@ function App() {
           {/* Detailed Features */}
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-xl font-semibold mb-4">Pabhaga Components</h3>
+              <h3 className="text-xl font-semibold mb-4">{currentContent.architecturalComposition.detailedFeatures.pabhaga.title}</h3>
               <ul className="space-y-3 text-gray-600">
-                <li>• Khura (Base Moulding)</li>
-                <li>• Kani (Recess)</li>
-                <li>• Basanta (Spring Season Moulding)</li>
+                {currentContent.architecturalComposition.detailedFeatures.pabhaga.items.map((item, index) => (
+                  <li key={index}>• {item}</li>
+                ))}
               </ul>
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-4">Superstructure Elements</h3>
+              <h3 className="text-xl font-semibold mb-4">{currentContent.architecturalComposition.detailedFeatures.superstructure.title}</h3>
               <ul className="space-y-3 text-gray-600">
-                <li>• Angasikharas (Miniature Turrets)</li>
-                <li>• Amalaka (Fluted Disc)</li>
-                <li>• Kalasa (Crowning Vase)</li>
+                {currentContent.architecturalComposition.detailedFeatures.superstructure.items.map((item, index) => (
+                  <li key={index}>• {item}</li>
+                ))}
               </ul>
             </div>
           </div>
@@ -599,14 +850,13 @@ function App() {
 
         {/* Jagamohana Section */}
         <div className="bg-amber-50 rounded-lg shadow-lg p-8 mb-16">
-          <h2 className="text-2xl font-bold mb-6 text-gray-800">The Jagamohana (Porch)</h2>
+          <h2 className="text-2xl font-bold mb-6 text-gray-800">{currentContent.jagamohana.title}</h2>
           <div className="prose prose-lg max-w-none text-gray-600">
-            <p className="mb-4">
-              The Jagamohana presents a striking contrast to the ornate sanctum with its relatively plain appearance. While originally intended to be decorated, it appears to have been left incomplete. Unlike its rectangular predecessors in earlier temples, this Jagamohana features a square plan, marking an evolution in temple architecture.
-            </p>
-            <p className="mb-4">
-              The interior of the Jagamohana, like the sanctum, is devoid of ornamentation.
-            </p>
+            {currentContent.jagamohana.content.map((paragraph, index) => (
+              <p key={index} className={index === 0 ? "mb-4" : ""}>
+                {paragraph}
+              </p>
+            ))}
           </div>
         </div>
 
@@ -629,29 +879,29 @@ function App() {
 
         {/* Astadikpalas and Nayikas */}
         <div className="bg-stone-100 rounded-lg shadow-lg p-8 mb-16">
-          <h2 className="text-2xl font-bold mb-6 text-gray-800">Sculptural Masterpieces</h2>
+          <h2 className="text-2xl font-bold mb-6 text-gray-800">{currentContent.sculpturalMasterpieces.title}</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-xl font-semibold mb-4">Astadikpalas (Guardians)</h3>
+              <h3 className="text-xl font-semibold mb-4">{currentContent.sculpturalMasterpieces.astadikpalas.title}</h3>
               <div className="prose prose-lg text-gray-600">
                 <p>
-                  The temple's central facade features outstanding standing astadikpalas on the jangha portion. These guardians, clad in diaphanous drapery, stand gracefully on lotus pedestals with their mounts below. The Varuna figure is particularly remarkable for its:
+                  {currentContent.sculpturalMasterpieces.astadikpalas.content}
                 </p>
                 <ul>
-                  <li>Intricate body ornamentation</li>
-                  <li>Elaborate coiffure</li>
-                  <li>Expressive facial features</li>
+                  {currentContent.sculpturalMasterpieces.astadikpalas.items.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
                 </ul>
               </div>
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-4">Divine Scenes</h3>
+              <h3 className="text-xl font-semibold mb-4">{currentContent.sculpturalMasterpieces.divineScenes.title}</h3>
               <div className="prose prose-lg text-gray-600">
-                <p>Notable divine depictions include:</p>
+                <p>{currentContent.sculpturalMasterpieces.divineScenes.content}</p>
                 <ul>
-                  <li>Marriage scene of Siva</li>
-                  <li>Nataraja in dance pose</li>
-                  <li>Parvati in various forms</li>
+                  {currentContent.sculpturalMasterpieces.divineScenes.items.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -713,7 +963,7 @@ function App() {
           <div className="bg-stone-100 rounded-lg shadow-lg p-8">
             <div className="flex items-center gap-3 mb-4">
               <Calendar className="w-6 h-6 text-amber-600" />
-              {/* <h2 className="text-2xl font-bold text-gray-800">{currentContent.historicalDating.title}</h2> */}
+              <h2 className="text-2xl font-bold text-gray-800">{currentContent.historicalDating.title}</h2>
             </div>
             <p className="text-gray-600">
               {currentContent.historicalDating.content}
@@ -734,30 +984,16 @@ function App() {
         <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
           <div className="flex items-center gap-3 mb-6">
             <BookOpen className="w-6 h-6 text-amber-600" />
-            <h2 className="text-2xl font-bold text-gray-800">References</h2>
+            <h2 className="text-2xl font-bold text-gray-800">{currentContent.references.title}</h2>
           </div>
           <div className="prose prose-lg max-w-none text-gray-600">
             <ul className="space-y-3 list-none pl-0">
-              <li className="flex gap-2">
-                <span className="text-amber-600">•</span>
-                <span>D. Mitra, Bhubaneswar, ASI, New Delhi, 1958.</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="text-amber-600">•</span>
-                <span>K. C. Panigrahi, Archaeological Remains at Bhubaneswar, Calcutta, 1961.</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="text-amber-600">•</span>
-                <span>K. S. Behera, Temples of Orissa, Odisha Sahitya Academy, Bhubaneswar, 1993.</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="text-amber-600">•</span>
-                <span>T. E. Donaldson, Hindu Temple Art of Orissa, Vol. II, E. J. Brill, Leiden, 1986.</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="text-amber-600">•</span>
-                <span>C. L. Fabin, History of Art of Orissa, Calcutta, 1974.</span>
-              </li>
+              {currentContent.references.items.map((item, index) => (
+                <li key={index} className="flex gap-2">
+                  <span className="text-amber-600">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -767,7 +1003,7 @@ function App() {
       <footer className="bg-gray-800 text-white py-8">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="text-sm">
-            © {new Date().getFullYear()} Rajarani Temple Heritage Site. Protected by Archaeological Survey of India.
+            {currentContent.footer.text.replace('{year}', new Date().getFullYear().toString())}
           </p>
         </div>
       </footer>
