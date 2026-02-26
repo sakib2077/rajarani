@@ -730,7 +730,7 @@ function App() {
         }}
       >
         <div className="absolute inset-0 bg-black/50" />
-        <div className="relative text-center text-white px-4">
+        <div className="relative text-center text-white px-4" style={language === 'or' ? { opacity: 0.3 } : {}}>
           <h1 className="text-5xl md:text-7xl font-bold mb-4">{currentContent.title}</h1>
           <p className="text-xl md:text-2xl mb-6">{currentContent.subtitle}</p>
           <div className="flex items-center justify-center gap-2 text-lg">
@@ -746,7 +746,7 @@ function App() {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-16">
         {/* Introduction */}
-        <div className="mb-16">
+        <div className="mb-16" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
           <h2 className="text-3xl font-bold mb-6 text-gray-800">{currentContent.historicalOverview.title}</h2>
           <div className="prose prose-lg max-w-none text-gray-600">
             {currentContent.historicalOverview.content.map((paragraph, index) => (
@@ -761,8 +761,20 @@ function App() {
           </div>
         </div>
 
+        {/* PDF Section - Displayed between Video and Gallery */}
+        {language === 'or' && (
+          <div className="mb-16">
+            <iframe
+              src="https://jpraaar3li.ufs.sh/f/coNgfsp8HpgYjEnizbZ8InxuZo5h3Pt47O1bp0sDEdLGYa9H"
+              className="w-full rounded-lg shadow-lg"
+              style={{ height: '600px', border: 'none' }}
+              title="Odia Temple Documentation"
+            />
+          </div>
+        )}
+
         {/* Image Gallery */}
-        <div className="mb-16">
+        <div className="mb-16" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
           <h2 className="text-3xl font-bold mb-6 text-gray-800">{currentContent.gallery.title}</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {currentContent.gallery.items.map((g, i) => (
@@ -781,8 +793,22 @@ function App() {
           </div>
         </div>
 
+        {/* Virtual Tour Section */}
+        <div className="bg-amber-100 rounded-lg shadow-lg p-8 mb-16 text-center" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
+          <h2 className="text-3xl font-bold mb-4 text-gray-800">Explore the Temple Virtually</h2>
+          <p className="text-lg text-gray-600 mb-6">Take an immersive 3D virtual tour of the magnificent Rajarani Temple from the comfort of your home.</p>
+          <a 
+            href="https://asimuseum.info/UdayGiri_Khandagiri/UdayGiri%20Khandagiri/index.htm"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300"
+          >
+            Start Virtual Tour
+          </a>
+        </div>
+
         {/* Key Features */}
-        <div className="grid md:grid-cols-4 gap-8 mb-16">
+        <div className="grid md:grid-cols-4 gap-8 mb-16" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
           <FeatureCard 
             icon={<Architecture />}
             title={currentContent.keyFeatures.architecture.title}
@@ -796,7 +822,7 @@ function App() {
         </div>
 
         {/* Architectural Details */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-16" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
           <h2 className="text-2xl font-bold mb-6 text-gray-800">{currentContent.architecturalComposition.title}</h2>
           
           {/* Structure Overview */}
@@ -849,7 +875,7 @@ function App() {
         </div>
 
         {/* Jagamohana Section */}
-        <div className="bg-amber-50 rounded-lg shadow-lg p-8 mb-16">
+        <div className="bg-amber-50 rounded-lg shadow-lg p-8 mb-16" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
           <h2 className="text-2xl font-bold mb-6 text-gray-800">{currentContent.jagamohana.title}</h2>
           <div className="prose prose-lg max-w-none text-gray-600">
             {currentContent.jagamohana.content.map((paragraph, index) => (
@@ -861,7 +887,7 @@ function App() {
         </div>
 
         {/* Sculptural Details */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-16" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
           <h2 className="text-2xl font-bold mb-6 text-gray-800">{currentContent.sculpturalHeritage.title}</h2>
           <div className="prose prose-lg max-w-none text-gray-600">
             {currentContent.sculpturalHeritage.content.map((paragraph, index) => (
@@ -878,7 +904,7 @@ function App() {
         </div>
 
         {/* Astadikpalas and Nayikas */}
-        <div className="bg-stone-100 rounded-lg shadow-lg p-8 mb-16">
+        <div className="bg-stone-100 rounded-lg shadow-lg p-8 mb-16" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
           <h2 className="text-2xl font-bold mb-6 text-gray-800">{currentContent.sculpturalMasterpieces.title}</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
@@ -909,7 +935,7 @@ function App() {
         </div>
 
         {/* Nayikas Section */}
-        <div className="bg-amber-50 rounded-lg shadow-lg p-8 mb-16">
+        <div className="bg-amber-50 rounded-lg shadow-lg p-8 mb-16" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
           <h2 className="text-2xl font-bold mb-6 text-gray-800">{currentContent.nayikas.title}</h2>
           <div className="prose prose-lg max-w-none text-gray-600">
             {currentContent.nayikas.content.map((paragraph, index) => (
@@ -947,7 +973,7 @@ function App() {
         </div>
 
         {/* Decorative Elements */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-16" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
           <h2 className="text-2xl font-bold mb-6 text-gray-800">{currentContent.decorativeArt.title}</h2>
           <div className="prose prose-lg max-w-none text-gray-600">
             {currentContent.decorativeArt.content.map((paragraph, index) => (
@@ -959,7 +985,7 @@ function App() {
         </div>
 
         {/* Dating and Garden */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 gap-8 mb-16" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
           <div className="bg-stone-100 rounded-lg shadow-lg p-8">
             <div className="flex items-center gap-3 mb-4">
               <Calendar className="w-6 h-6 text-amber-600" />
@@ -981,7 +1007,7 @@ function App() {
         </div>
 
         {/* References Section */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-16" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
           <div className="flex items-center gap-3 mb-6">
             <BookOpen className="w-6 h-6 text-amber-600" />
             <h2 className="text-2xl font-bold text-gray-800">{currentContent.references.title}</h2>
@@ -1000,7 +1026,7 @@ function App() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8">
+      <footer className="bg-gray-800 text-white py-8" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="text-sm">
             {currentContent.footer.text.replace('{year}', new Date().getFullYear().toString())}
