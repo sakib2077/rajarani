@@ -798,7 +798,7 @@ function App() {
           <h2 className="text-3xl font-bold mb-4 text-gray-800">Explore the Temple Virtually</h2>
           <p className="text-lg text-gray-600 mb-6">Take an immersive 3D virtual tour of the magnificent Rajarani Temple from the comfort of your home.</p>
           <a 
-            href="https://asimuseum.info/UdayGiri_Khandagiri/UdayGiri%20Khandagiri/index.htm"
+            href="https://asimuseum.info/RAJA_RANI/RAJA%20RANI/index.htm"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300"
