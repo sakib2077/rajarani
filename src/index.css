@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'AOUTK99B';
+  src: url('/src/fonts/AOUTK99B.TTF') format('truetype');
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.font-odia {
+  font-family: 'AOUTK99B', serif;
+  font-size: 2em;
+  line-height: 1;
+}

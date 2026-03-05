@@ -121,8 +121,8 @@ const content: Record<Language, ContentData> = {
     historicalOverview: {
       title: "Historical Overview",
       content: [
-        "The Rajarani temple, originally known as the Indresvara Siva Temple, stands as a testament to the architectural brilliance of ancient Odisha. Located in the north-east of Lingaraja Temple, this remarkable structure represents a unique experiment in temple architecture, distinguished by its sculptural excellence and ornate design.",
-        "The temple derives its current name 'Rajarani' from the fine-grained yellowish sandstone used in its construction. This special stone, known locally as Rajarania, gives the temple its distinctive amber hue that has mellowed beautifully with time, enhancing its architectural splendor."
+        "The Rajarani temple, originally known as the Indresvara Siva Temple, stands as a testament to the architectural brilliance of ancient Odisha. Located in the north-east of Lingaraj Temple, this remarkable structure represents a unique experiment in temple architecture, distinguished by its sculptural excellence and ornate design.",
+        "The temple derives its current name ‘Rajarani’ from the fine-grained yellowish sandstone used in its construction. The special stone, known locally as Rajarania, gives the temple its distinctive amber hue that has mellowed beautifully with time, enhancing its architectural splendor."
       ]
     },
     architecturalComposition: {
@@ -139,28 +139,31 @@ const content: Record<Language, ContentData> = {
       panchangaBada: {
         title: "Panchanga Bada (Five Divisions)",
         items: [
-          "1. Pabhaga (Base)",
-          "2. Talajangha (Lower Wall)", 
-          "3. Bandhana (Binding)",
-          "4. Uparajangha (Upper Wall)",
-          "5. Baranda (Top Section)"
+          "1.	Pabhaga (Mouldings at the base of the temple)",
+            "2.	Talajangha (Lower wall portion of the temple)",
+            "3.	Bandhana (Horizontal mouldings along the wall)",
+            "4.	Uparajangha (Upper wall portion of the temple)",
+            "5.	Baranda (Mouldings forming the top element of the bada)"
         ]
       },
       detailedFeatures: {
         pabhaga: {
           title: "Pabhaga Components",
           items: [
-            "Khura (Base Moulding)",
-            "Kani (Recess)",
-            "Basanta (Spring Season Moulding)"
+            "Khura (Base moulding in the form of a hoop)",
+            "Kumbha (Pot-shaped moulding)",
+            "Patta (Flat band)",
+            "Kani (Projecting edge)",
+            "Basanta (Top moulding of the pabhaga)"
           ]
         },
         superstructure: {
           title: "Superstructure Elements",
           items: [
-            "Angasikharas (Miniature Turrets)",
-            "Amalaka (Fluted Disc)",
-            "Kalasa (Crowning Vase)"
+            "Gandi (Sikhara or curvilinear spire above the bada)",
+            "Angasikharas (Miniature turrets)",
+            "Amalaka (Fluted disc)",
+            "Kalasa (Crowning vase)"
           ]
         }
       }
@@ -171,24 +174,26 @@ const content: Record<Language, ContentData> = {
         "The temple is renowned for its rich sculptural wealth, featuring several notable elements that showcase the artistic mastery of ancient Odishan craftsmen."
       ],
       items: [
-        "Naga-nagi stambha (Serpent Pillars)",
-        "Saiva dwarapalas (Shaivite Door Guardians)", 
+        "Naga-nagi stambha (Serpent pillar)",
+        "Saiva dwarapalas (Shaivite Door Guardians)",
         "Lakulisa sculpture",
         "Navagrahas (Nine Planets)",
-        "Astadikpalas (Eight Directional Guardians)"
+        "Astadikpalas (Eight Directional Guardians)",
+        "Nayika figures",
+        "Mithuna figures"
       ]
     },
     nayikas: {
       title: "The Nayikas",
       content: [
-        "The temple's celebrity status is largely attributed to its tall, slender, and sophisticated nayikas adorning the sanctum walls. These figures depict various emotions and activities, showcasing the daily life and expressions of women in ancient times."
+        "The temple’s celebrity status is largely attributed to its tall, slender and sophisticated nayikas adorning the sanctum walls. These figures depict various emotions and activities, showcasing the daily life and expressions of women in ancient times."
       ],
       activities: {
         title: "Daily Activities",
         items: [
           "Attending to toilet",
           "Looking into mirror", 
-          "Taking off anklet"
+          "Removing anklet"
         ]
       },
       interactions: {
@@ -211,12 +216,12 @@ const content: Record<Language, ContentData> = {
     decorativeArt: {
       title: "Decorative Artistry",
       content: [
-        "The temple walls are adorned with intricate scroll motifs featuring lush foliages, detailed creepers, and vanalata (forest vines). Each design contains independent foliage patterns, creating a unique artistic expression that enhances the temple's overall aesthetic appeal."
+        "The temple walls are adorned with intricate scroll motifs featuring lush foliages, detailed creepers and vanalata (forest vines). Each design contains independent foliage patterns, creating a unique artistic expression that enhances the temple’s overall aesthetic appeal."
       ]
     },
     historicalDating: {
       title: "Historical Dating",
-      content: "Based on its sculptural art and architectural style, scholars have dated this temple to approximately the mid-11th century AD, marking a significant period in Odishan temple architecture."
+      content: "Based on its sculptural art and architectural style, scholars have dated this temple to approximately the mid 11th century AD, marking a significant period in Odishan temple architecture."
     },
     gardenComplex: {
       title: "Garden Complex", 
@@ -261,19 +266,16 @@ const content: Record<Language, ContentData> = {
     jagamohana: {
       title: "The Jagamohana (Porch)",
       content: [
-        "The Jagamohana presents a striking contrast to the ornate sanctum with its relatively plain appearance. While originally intended to be decorated, it appears to have been left incomplete. Unlike its rectangular predecessors in earlier temples, this Jagamohana features a square plan, marking an evolution in temple architecture.",
-        "The interior of the Jagamohana, like the sanctum, is devoid of ornamentation."
+        "The jagamohana presents a striking contrast to the ornate sanctum with its relatively plain appearance. While originally intended to be decorated, it appears to have been left incomplete. Unlike its rectangular predecessors in earlier temples, this jagamohana features a square plan, marking an evolution in temple architecture. The interior of the jagamohana, like the sanctum, is devoid of ornamentation."
       ]
     },
     sculpturalMasterpieces: {
       title: "Sculptural Masterpieces",
       astadikpalas: {
         title: "Astadikpalas (Guardians)",
-        content: "The temple's central facade features outstanding standing astadikpalas on the jangha portion. These guardians, clad in diaphanous drapery, stand gracefully on lotus pedestals with their mounts below. The Varuna figure is particularly remarkable for its:",
+        content: "The temple’s façade features outstanding standing astadikpalas on the jangha portion. These guardians, clad in diaphanous drapery, stand gracefully on lotus pedestals with their mounts below. The Varuna figure is particularly remarkable for its intricate body ornamentation, elaborate coiffure and expressive facial features.",
         items: [
-          "Intricate body ornamentation",
-          "Elaborate coiffure",
-          "Expressive facial features"
+         ""
         ]
       },
       divineScenes: {
@@ -491,95 +493,97 @@ const content: Record<Language, ContentData> = {
     subtitle: "ଓଡିଶା ସ୍ଥାପତ୍ୟର ଉତ୍କୃଷ୍ଟ ଉଦାହରଣ",
     location: "20°15'N, 85°50'E • ଭୁବନେଶ୍ୱର, ଓଡ଼ିଶା",
     historicalOverview: {
-      title: "ଐତିହାସିକ ବିହଙ୍ଗାବଲୋକନ",
+      title: "HZòjûiòK aòjwûaùfûK^",
       content: [
-        "ପୂର୍ବରୁ ଇନ୍ଦ୍ରେଶ୍ୱର ଶିବ ମନ୍ଦିର ଭାବରେ ଜଣାଶୁଣା ରାଜରାଣୀ ମନ୍ଦିର, ପ୍ରାଚୀନ ଓଡ଼ିଶାର ସ୍ଥାପତ୍ୟ ଚମତ୍କାରତାର ପ୍ରମାଣ। ମନ୍ଦିରଟି ଲିଙ୍ଗରାଜ ମନ୍ଦିରର ଉତ୍ତର-ପୂର୍ବରେ ଅବସ୍ଥିତ ଏବଂ ଏହାର ମୂର୍ତ୍ତି ଏବଂ ଅଳଙ୍କାରିତ ଡିଜାଇନ୍ ପାଇଁ ପ୍ରସିଦ୍ଧ।",
-        "ଏହି ମନ୍ଦିରର ନାମ 'ରାଜାରାଣୀ' ଏହାର ନିର୍ମାଣରେ ବ୍ୟବହୃତ ସୂକ୍ଷ୍ମ ଦାନାଦାର ହଳଦିଆ ବାଲୁକା ପଥରରୁ ଆସିଛି। ଏହି ବିଶେଷ ପଥର, ଯାହା ସ୍ଥାନୀୟ ଭାବରେ ରାଜରାନିଆ ନାମରେ ଜଣାଶୁଣା, ମନ୍ଦିରକୁ ଏକ ସ୍ୱତନ୍ତ୍ର ଆମ୍ବର ରଙ୍ଗ ପ୍ରଦାନ କରିଥାଏ।",
-        "ଏହା ଲିଙ୍ଗରାଜ ମନ୍ଦିରର ଉତ୍ତର-ପୂର୍ବେ ଅବସ୍ଥିତ ଏକ ଅନନ୍ୟ ପ୍ରୟୋଗଧର୍ମୀ ମନ୍ଦିର, ଯାହାର ମୂର୍ତ୍ତି-ସୌନ୍ଦର୍ଯ୍ୟ ଓ ଅଳଙ୍କାର ଶିଳ୍ପ ଅତ୍ୟନ୍ତ ଆକର୍ଷକ।"
+       "@ZúZùe Aù¦âgße gòa c¦òe bûaùe RYûgêYû eûRûeûYú c¦òe, _âûPú^ IWÿògûe iÚû_Zý I Kkûe CKôéÁ C\ûjeY @ùU û c¦òeUò fòweûR c¦òee Ce-_ìaðùe @aiÚòZ Gaõ Gjûe cìòð Gaõ @kuûeòZû _ûAñ _âiò¡ û",
+	      "Gjò c¦òee ^ûc ‘eûRûeûYú’, Gjûe ^òcûðYùe aýajéZ AhZ jk\ò@û ewe aûfêKû _[eeê @ûiòQò û Gjò aòùgh _[e, ~ûjû iÚû^úd bûaùe eûReûYúd ^ûcùe RYûgêYû, c¦òeKê GK ÊZª ew _â\û^ Keò[ûG û"
       ]
     },
     architecturalComposition: {
       title: "ସ୍ଥାପତ୍ୟ ବିନ୍ୟାସ",
       primaryStructure: {
-        title: "ପ୍ରାଥମିକ ଗଠନ",
+        title: "c¦òe iÚû_Zýe aòbò^Ü @w",
         items: [
-          "ପୂର୍ବ ଦିଗ",
-          "ଗର୍ଭଗୃହ (ଦେଉଳ) ଉଚ୍ଚତା: ୧୭.୯ ମିଟର",
-          "ପଞ୍ଚରଥ ଯୋଜନା ଏବଂ ବକ୍ର ରେଖା ଉପର ଗଠନ",
-          "ତିନି-ମୋଲ୍ଡେଡ୍ ପ୍ଲାଟଫର୍ମ ଆଧାର"
+          "_ìaðcêLú c¦òe",
+          "MbðMéj (ù\Ck) CyZû : 17.9 còUe",
+          "_e[ ùeLû gòLe",
+          "ÊÌCy _òÂ"
         ]
       },
       panchangaBada: {
-        title: "ପଞ୍ଚାଙ୍ଗ ବଡ଼ (ପାଞ୍ଚଟି ବିଭାଜନ)",
+        title: "_ûw aûWÿ",
         items: [
-          "୧. ପାଭାଗ (ଆଧାର)",
-          "୨. ତାଳଜଙ୍ଘ (ତଳ କାନ୍ଥ)",
-          "୩. ବନ୍ଧନ (ବନ୍ଧନ)",
-          "୪. ଉପରାଜଙ୍ଘ (ଉପର କାନ୍ଥ)",
-          "୫. ବରଣ୍ଡା (ଉପର ବିଭାଗ)"
+          "1.	_û bûM",
+          "2.	Zk Rx",
+          "3.	a§^",
+          "4.	C_e Rx",
+          "5.	aeŠ"
         ]
       },
       detailedFeatures: {
         pabhaga: {
-          title: "ପାଭାଗର ଅଂଶ",
+          title: "_û bûMe aòbò^Ü @w",
           items: [
-            "ଖୁରା (ଆଧାର ମୋଲଡିଂ)",
-            "କଣି (ଖାଲ)",
-            "ବସନ୍ତ (ବସନ୍ତ ଋତୁ ମୋଲଡିଂ)"
+            "Lêe",
+            "Kê¸",
+            "_Uû",
+            "Kû^ò",
+            "ai«"
           ]
         },
         superstructure: {
-          title: "ଉପରିଭାଗର ଉପାଦାନ",
+          title: "gòLee aòbò^Ü @w",
           items: [
-            "ଅଙ୍ଗଶିଖର (କ୍ଷୁଦ୍ର ଗମ୍ବୁଜ)",
-            "ଅଁଳା (ଖୋଦିତ ଚକ୍ର)",
-            "କଳସ (ଚୂଡ଼ାମଣି ପାତ୍ର)"
+            "_e[ MŠò",
+            "@wgòLe",
+            "@cæ",
+            "Kki"
           ]
         }
       }
     },
     sculpturalHeritage: {
-      title: "ଭାସ୍କର୍ଯ୍ୟ ଐତିହ୍ୟ",
+      title: "bûÄ~ýð HZòjý",
       content: [
-        "ମନ୍ଦିରଟି ଏହାର ସମୃଦ୍ଧ ଭାସ୍କର୍ଯ୍ୟ ଐତିହ୍ୟ ପାଇଁ ପ୍ରସିଦ୍ଧ, ଯାହା ପ୍ରାଚୀନ ଓଡ଼ିଶାର ଶିଳ୍ପକାରମାନଙ୍କର କଳାତ୍ମକ ଦକ୍ଷତାକୁ ପ୍ରଦର୍ଶନ କରିଥାଏ।",
-        "ଏଠାରେ ନାଗ-ନାଗୀ ସ୍ତମ୍ଭ, ସୈବ ଦ୍ୱାରପାଳ, ଲକୁଳିଶା, ନବଗ୍ରହ ଏବଂ ଅଷ୍ଟଦିକପାଳ ଭଳି ମହତ୍ୱପୂର୍ଣ୍ଣ ମୂର୍ତ୍ତି ସ୍ଥାନ ପାଇଛି।"
+        "c¦òeUò Gjûe icé¡ bûÄ~ýð HZòjý _ûAñ _âiò¡, ~ûjû _âûPú^ IWÿògûe gòÌKûecû^ue KkûcôK \lZûKê _â\gð^ Keò[ûG û"
       ],
       items: [
-        "ନାଗ-ନାଗୀ ସ୍ତମ୍ଭ",
-        "ଶୈବୀ ଦ୍ୱାରପାଳ",
-        "ଲାକୁଳିଶା ମୂର୍ତ୍ତି",
-        "ନବଗ୍ରହ",
-        "ଅଷ୍ଟଦିକପାଳ (ଆଠ ଦିଗର ରକ୍ଷକ)"
+        "^ûM-^ûMú É¸",
+        "ùg÷a \ßûe_ûk",
+        "fKêkòg cìòð",
+        "^aMâj",
+        "@Á\òM_ûk",
+        "^ûdòKû",
+        "cò[ê^",
       ]
     },
     nayikas: {
-      title: "ନାୟିକା",
+      title: "^ûdòKû",
       content: [
-        "ମନ୍ଦିର କାନ୍ଥରେ ନାୟିକାମାନଙ୍କ ମୂର୍ତ୍ତି ଅଛି, ଯାହା ବିଭିନ୍ନ ଭାବନା ଏବଂ କାର୍ଯ୍ୟକଳାପକୁ ଚିତ୍ରଣ କରିଥାଏ। ଏହି ମୂର୍ତ୍ତିଗୁଡ଼ିକରେ ପ୍ରାଚୀନ କାଳର ମହିଳାମାନଙ୍କର ଦୈନନ୍ଦିନ ଜୀବନ ଏବଂ ଅଭିବ୍ୟକ୍ତିର ଚିତ୍ରଣ ରହିଛି।",
-        "ଉଚ୍ଚ, ସୁକୁମାର ଏବଂ ସଂସ୍କାରିତ ନାୟିକାମୂର୍ତ୍ତିମାନେ ମନ୍ଦିରକୁ ବିଶେଷ ପ୍ରସିଦ୍ଧି ଦେଇଛନ୍ତି।"
+        "c¦òe aûjý Kû^Úùe ^ûdòKûcû^u cìòð @Qò, ~ûjû aòbò^Ü bûa^û Gaõ Kû~ýðKkû_Kê PòZâY Keò[ûG  û"
       ],
       activities: {
-        title: "ଦୈନନ୍ଦିନ କାର୍ଯ୍ୟକଳାପ",
+        title: "ù\÷^¦ò^ Kû~ýðKkû_",
         items: [
-          "ଶୌଚାଳୟରେ ଯତ୍ନ ନେବା",
-          "ଦର୍ପଣରେ ଦେଖିବା",
-          "ନୂପୁର କାଢ଼ିବା"
+          "ùg÷ûPûkdùe iûRi{û",
+          "\_ðYùe cêLŠk \gð^",
+          "_û\eê ^ì_êe @_iûeY"
         ]
       },
       interactions: {
-        title: "କଥାବାର୍ତ୍ତା",
+        title: "Kù[û_K[^",
         items: [
-          "ନିଜ ସନ୍ତାନକୁ ସ୍ନେହ କରିବା",
-          "ପୋଷା ପକ୍ଷୀକୁ ସ୍ନେହ କରିବା",
-          "ସାଥୀମାନଙ୍କ ସହ କଥାବାର୍ତ୍ତା"
+          "^òR i«û^Kê ùiÜj Keòaû",
+          "ù_ûhû _lúKê ùiÜj Keòaû",
+          "iû[úcû^u ij aûûðkû_"
         ]
       },
       expressions: {
-        title: "ଭାବନା",
+        title: "bûabwú",
         items: [
-          "ବିଭିନ୍ନ ଭାବନାତ୍ମକ ଅବସ୍ଥା",
-          "ଗଛ ଡାଳ ଧରିବା",
-          "ସଙ୍ଗୀତ ବାଦ୍ୟଯନ୍ତ୍ର ବଜାଇବା"
+          "aòbò^Ü bûa^ûcôK @aiÚû",
+          "aòbò^Ü bûa^ûcôK @aiÚû",
+          "iwúZ aû\ý~ª aû\^"
         ]
       }
     },
@@ -591,12 +595,12 @@ const content: Record<Language, ContentData> = {
       ]
     },
     historicalDating: {
-      title: "ଐତିହାସିକ ତାରିଖ",
-      content: "ବିଦ୍ୱାନମାନେ ଏହାର ମୂର୍ତ୍ତି ଏବଂ ସ୍ଥାପତ୍ୟ ଶୈଳୀ ଉପରେ ଆଧାର କରି ମନ୍ଦିରକୁ ପ୍ରାୟ ୧୧ ଶତାବ୍ଦୀର ମଧ୍ୟଭାଗକୁ ତାରିଖ ଦିଅନ୍ତି, ଯାହା ଓଡ଼ିଶାର ମନ୍ଦିର ସ୍ଥାପତ୍ୟରେ ଏକ ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ସମୟ।"
+      title: "HZòjûiòK icd",
+      content: "aò\ßû^cûù^ Gjûe cìòð Gaõ iÚû_Zý ùg÷kú C_ùe @û]ûe Keò c¦òee ^òcûðY Kûk _âûd GKû\g gZû±úe c¤bûMKê ^ò¡ûðeY KeòQ«ò, ~ûjû IWÿògûe c¦òe iÚû_Zýùe GK MêeêZß_ì‰ð icd û"
     },
     gardenComplex: {
-      title: "ବଗିଚା ଉଦ୍ୟାନକରଣ",
-      content: "ମନ୍ଦିର ଚାରିପାଖରେ ଏକ ସୁନ୍ଦର ଉଦ୍ୟାନ ସଂକଳନ ବିକଶିତ ହୋଇଛି, ଯାହା ଏହାର ପ୍ରାକୃତିକ ସୌନ୍ଦର୍ଯ୍ୟକୁ ବୃଦ୍ଧି କରେ ଏବଂ ପରିଦର୍ଶକମାନଙ୍କ ପାଇଁ ଏକ ଶାନ୍ତ ପରିବେଶ ପ୍ରଦାନ କରେ।"
+      title: "C\ýû^",
+      content: "c¦òe Pûeò_ûLùe GK iê¦e C\ýû^ aòKgòZ ùjûAQò, ~ûjû Gjûe _âûKéZòK ùiø¦~ýðKê aé¡ò Kùe Gaõ _eò\gðKcû^u _ûAñ GK gû« _eòùag _â\û^ Kùe û"
     },
     video: {
       'frame': '<iframe width="560" height="315" src="https://www.youtube.com/embed/0fhk4ffiugE?si=jxX2bIQjzaBATI8k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
@@ -606,59 +610,57 @@ const content: Record<Language, ContentData> = {
       items: [
         {
           image: "https://resonancemedia.co.in.smmedia.co.in/wp-content/uploads/2025/02/2-Front-View-of-Rajarani-Temple-scaled.jpg",
-          alt: "ରାଜାରାଣୀ ମନ୍ଦିରର ସାମ୍ନା ଦୃଶ୍ୟ",
-          title: "ସାମ୍ନା ଦୃଶ୍ୟ",
+          alt: "c¦òee i¹êL \égý",
+          title: "c¦òee i¹êL \égý",
           subtitle: "ମନ୍ଦିରର ଅତି ଅଲଙ୍କାରିତ ପ୍ରବେଶଦ୍ୱାର"
         },
         {
           image: "https://resonancemedia.co.in.smmedia.co.in/wp-content/uploads/2025/02/3-Panels-on-the-Deul.jpg",
           alt: "ଦେଉଳରେ ସୌନ୍ଦର୍ଯ୍ୟମୟ ପ୍ୟାନେଲ",
-          title: "ଦେଉଳ ପ୍ୟାନେଲ",
+          title: "c¦òee bûÄ~ýðeûRò",
           subtitle: "ସୁକ୍ଷ୍ମ ଭାସ୍କର୍ଯ୍ୟ ସୂଚନା"
         },
         {
           image: "https://resonancemedia.co.in.smmedia.co.in/wp-content/uploads/2025/02/4-Nayika.jpg",
           alt: "ନାୟିକା ମୂର୍ତ୍ତି",
-          title: "ନାୟିକା",
+          title: "^ûdòKû",
           subtitle: "ସୁନ୍ଦର ନାୟିକା ମୂର୍ତ୍ତିର ଦୃଶ୍ୟ"
         }
       ]
     },
     keyFeatures: {
       architecture: {
-        title: "ସ୍ଥାପତ୍ୟ ଶୈଳୀ",
-        description: "ପଞ୍ଚରଥ ଗଠନ ଏବଂ ବକ୍ର ରେଖା ଉପର ଗଠନ (ରେଖା ଶିଖର)।"
+        title: "iÚû_Zý ùg÷kú",
+        description: "c¦òeUò _e[aògòÁ ùeLû ùg÷kúùe ^òcðòZ û"
       },
       history: {
-        title: "ଐତିହାସିକ ଗୁରୁତ୍ୱ",
-        description: "ପୂର୍ବରୁ ଇନ୍ଦ୍ରେଶ୍ୱର ଶିବ ମନ୍ଦିର ଭାବରେ ଜଣାଶୁଣା, ଯାହା ଓଡ଼ିଶା ମନ୍ଦିର ସ୍ଥାପତ୍ୟର ଏକ ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ସମୟକୁ ପ୍ରତିନିଧିତ୍ୱ କରେ।"
+        title: "HZòjûiòK cjß",
+        description: "@ZúZùe Aù¦âgße gòa ^ûcùe LýûZ Gjò c¦òe Kkòw ùg÷kú c¦òe iÚû_Zýe GK @^^ý C\ûjeY û "
       }
     },
     jagamohana: {
-      title: "ଜଗମୋହନ (ପୋର୍ଟିକୋ)",
+      title: "RMùcûj^",
       content: [
-        "ଜଗମୋହନ ଏହାର ସାଧାରଣ ରୂପ ସହିତ ଅଳଙ୍କାରିତ ଗର୍ଭଗୃହରେ ଏକ ଆକର୍ଷଣୀୟ ବିପରୀତ ଭାବ ପ୍ରଦାନ କରେ। ଯଦିଓ ଏହାକୁ ସଜାଇବା ପାଇଁ ମୂଳତଃ ଉଦ୍ଦେଶ୍ୟ ରଖାଯାଇଥିଲା, ଏହା ଅସମ୍ପୂର୍ଣ୍ଣ ରହିଥିବା ପରି ମନେହୁଏ। ପୂର୍ବ ମନ୍ଦିରଗୁଡ଼ିକରେ ଥିବା ଆୟତାକାର ଜଗମୋହନ ପରିବର୍ତ୍ତେ, ଏହି ଜଗମୋହନ ଏକ ବର୍ଗାକାର ଯୋଜନା ବିଶିଷ୍ଟ, ଯାହା ମନ୍ଦିର ସ୍ଥାପତ୍ୟରେ ଏକ ବିବର୍ତ୍ତନକୁ ଚିହ୍ନିତ କରେ।",
-        "ଗର୍ଭଗୃହ ପରି ଜଗମୋହନର ଭିତର ଭାଗ ମଧ୍ୟ ଅଳଙ୍କାର ଶୂନ୍ୟ।"
+        "c¦òe Zêk^ûùe RMùcûj^ ÊÌ @ûkuûeòKZû aj^ Kùe û i¸aZü Gjûe ^òcðûY @iµì‰ð [ôfû û Gjûe bìaò^ýûi PZêbêðRûKéZò @ùU û"
       ]
     },
     sculpturalMasterpieces: {
-      title: "ଭାସ୍କର୍ଯ୍ୟର ଶ୍ରେଷ୍ଠ ନିଦର୍ଶନ",
+      title: "@^^ý Kkû I bûÄ~ýð",
       astadikpalas: {
-        title: "ଅଷ୍ଟଦିକପାଳ (ରକ୍ଷକ)",
-        content: "ମନ୍ଦିରର ମୁଖ୍ୟ ଭାଗରେ ଥିବା ଜଙ୍ଘା ଅଂଶରେ ଉତ୍କୃଷ୍ଟ ଅଷ୍ଟଦିକପାଳମାନଙ୍କର ମୂର୍ତ୍ତି ରହିଛି। ସୂକ୍ଷ୍ମ ବସ୍ତ୍ର ପରିହିତ ଏହି ରକ୍ଷକମାନେ ପଦ୍ମ ଆସନ ଉପରେ ସେମାନଙ୍କ ବାହନ ସହିତ ଠିଆ ହୋଇଛନ୍ତି। ବରୁଣଙ୍କ ମୂର୍ତ୍ତି ବିଶେଷ ଭାବରେ ନିମ୍ନଲିଖିତ କାରଣ ପାଇଁ ଉଲ୍ଲେଖନୀୟ:",
+        title: "@Á\òM_ûk",
+        content: "bûÄ~ýðcû^u c¤ùe @Á\òM_ûk @Zý« iìlà KûeêKû~ýð _ì‰ð @ùU û @Á\òM_ûku c¤ùe @MÜò I aeêYu _âZòcû ^òRe iìlà Kc^údZû _ûAñ iê_âiò¡ û",
         items: [
-          "ଜଟିଳ ଶାରୀରିକ ଅଳଙ୍କାର",
-          "ବିସ୍ତୃତ କେଶ ବିନ୍ୟାସ",
-          "ଭାବପୂର୍ଣ୍ଣ ଚେହେରା"
+          ""
         ]
       },
       divineScenes: {
-        title: "ଦୈବୀ ଦୃଶ୍ୟ",
-        content: "ଉଲ୍ଲେଖନୀୟ ଦୈବୀ ଚିତ୍ରଣଗୁଡ଼ିକ ମଧ୍ୟରେ ଅନ୍ତର୍ଭୁକ୍ତ:",
+        title: "ù\aù\aúu _âZòcû",
+        content: "_âcêL ù\aù\aúu c¤ùe ^òcÜfòLôZ _âZòcû I \égýûakú @^ýZc û",
         items: [
-          "ଶିବଙ୍କ ବିବାହ ଦୃଶ୍ୟ",
-          "ନୃତ୍ୟ ମୁଦ୍ରାରେ ନଟରାଜ",
-          "ପାର୍ବତୀଙ୍କ ବିଭିନ୍ନ ରୂପ"
+          "gòa_ûaðZúu aòaûj",
+          "^UeûR",
+          "_ûaðZú",
+          "fòw_ìRû \égýûakú"
         ]
       }
     },
@@ -683,7 +685,7 @@ function App() {
   const currentContent = content[language];
 
   return (
-    <div className="min-h-screen bg-stone-50">
+    <div className={`min-h-screen bg-stone-50 ${language === 'or' ? 'font-odia' : ''}`}>
       {/* Language Toggle */}
       <div className="fixed top-4 right-4 z-50">
         <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-2 flex gap-1">
@@ -730,7 +732,7 @@ function App() {
         }}
       >
         <div className="absolute inset-0 bg-black/50" />
-        <div className="relative text-center text-white px-4" style={language === 'or' ? { opacity: 0.3 } : {}}>
+        <div className="relative text-center text-white px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-4">{currentContent.title}</h1>
           <p className="text-xl md:text-2xl mb-6">{currentContent.subtitle}</p>
           <div className="flex items-center justify-center gap-2 text-lg">
@@ -746,7 +748,7 @@ function App() {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-16">
         {/* Introduction */}
-        <div className="mb-16" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
+        <div className="mb-16">
           <h2 className="text-3xl font-bold mb-6 text-gray-800">{currentContent.historicalOverview.title}</h2>
           <div className="prose prose-lg max-w-none text-gray-600">
             {currentContent.historicalOverview.content.map((paragraph, index) => (
@@ -761,20 +763,8 @@ function App() {
           </div>
         </div>
 
-        {/* PDF Section - Displayed between Video and Gallery */}
-        {language === 'or' && (
-          <div className="mb-16">
-            <iframe
-              src="https://jpraaar3li.ufs.sh/f/coNgfsp8HpgYjEnizbZ8InxuZo5h3Pt47O1bp0sDEdLGYa9H"
-              className="w-full rounded-lg shadow-lg"
-              style={{ height: '600px', border: 'none' }}
-              title="Odia Temple Documentation"
-            />
-          </div>
-        )}
-
         {/* Image Gallery */}
-        <div className="mb-16" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
+        <div className="mb-16" >
           <h2 className="text-3xl font-bold mb-6 text-gray-800">{currentContent.gallery.title}</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {currentContent.gallery.items.map((g, i) => (
@@ -794,7 +784,7 @@ function App() {
         </div>
 
         {/* Virtual Tour Section */}
-        <div className="bg-amber-100 rounded-lg shadow-lg p-8 mb-16 text-center" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
+        <div className="bg-amber-100 rounded-lg shadow-lg p-8 mb-16 text-center" >
           <h2 className="text-3xl font-bold mb-4 text-gray-800">Explore the Temple Virtually</h2>
           <p className="text-lg text-gray-600 mb-6">Take an immersive 3D virtual tour of the magnificent Rajarani Temple from the comfort of your home.</p>
           <a 
@@ -808,7 +798,7 @@ function App() {
         </div>
 
         {/* Key Features */}
-        <div className="grid md:grid-cols-4 gap-8 mb-16" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
+        <div className="grid md:grid-cols-4 gap-8 mb-16" >
           <FeatureCard 
             icon={<Architecture />}
             title={currentContent.keyFeatures.architecture.title}
@@ -822,7 +812,7 @@ function App() {
         </div>
 
         {/* Architectural Details */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-16" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-16" >
           <h2 className="text-2xl font-bold mb-6 text-gray-800">{currentContent.architecturalComposition.title}</h2>
           
           {/* Structure Overview */}
@@ -875,7 +865,7 @@ function App() {
         </div>
 
         {/* Jagamohana Section */}
-        <div className="bg-amber-50 rounded-lg shadow-lg p-8 mb-16" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
+        <div className="bg-amber-50 rounded-lg shadow-lg p-8 mb-16" >
           <h2 className="text-2xl font-bold mb-6 text-gray-800">{currentContent.jagamohana.title}</h2>
           <div className="prose prose-lg max-w-none text-gray-600">
             {currentContent.jagamohana.content.map((paragraph, index) => (
@@ -887,7 +877,7 @@ function App() {
         </div>
 
         {/* Sculptural Details */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-16" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-16" >
           <h2 className="text-2xl font-bold mb-6 text-gray-800">{currentContent.sculpturalHeritage.title}</h2>
           <div className="prose prose-lg max-w-none text-gray-600">
             {currentContent.sculpturalHeritage.content.map((paragraph, index) => (
@@ -904,7 +894,7 @@ function App() {
         </div>
 
         {/* Astadikpalas and Nayikas */}
-        <div className="bg-stone-100 rounded-lg shadow-lg p-8 mb-16" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
+        <div className="bg-stone-100 rounded-lg shadow-lg p-8 mb-16" >
           <h2 className="text-2xl font-bold mb-6 text-gray-800">{currentContent.sculpturalMasterpieces.title}</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
@@ -935,7 +925,7 @@ function App() {
         </div>
 
         {/* Nayikas Section */}
-        <div className="bg-amber-50 rounded-lg shadow-lg p-8 mb-16" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
+        <div className="bg-amber-50 rounded-lg shadow-lg p-8 mb-16" >
           <h2 className="text-2xl font-bold mb-6 text-gray-800">{currentContent.nayikas.title}</h2>
           <div className="prose prose-lg max-w-none text-gray-600">
             {currentContent.nayikas.content.map((paragraph, index) => (
@@ -973,7 +963,7 @@ function App() {
         </div>
 
         {/* Decorative Elements */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-16" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-16" >
           <h2 className="text-2xl font-bold mb-6 text-gray-800">{currentContent.decorativeArt.title}</h2>
           <div className="prose prose-lg max-w-none text-gray-600">
             {currentContent.decorativeArt.content.map((paragraph, index) => (
@@ -985,7 +975,7 @@ function App() {
         </div>
 
         {/* Dating and Garden */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
+        <div className="grid md:grid-cols-2 gap-8 mb-16" >
           <div className="bg-stone-100 rounded-lg shadow-lg p-8">
             <div className="flex items-center gap-3 mb-4">
               <Calendar className="w-6 h-6 text-amber-600" />
@@ -1007,7 +997,7 @@ function App() {
         </div>
 
         {/* References Section */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-16" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-16" >
           <div className="flex items-center gap-3 mb-6">
             <BookOpen className="w-6 h-6 text-amber-600" />
             <h2 className="text-2xl font-bold text-gray-800">{currentContent.references.title}</h2>
@@ -1026,7 +1016,7 @@ function App() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8" style={language === 'or' ? { opacity: 0.3, pointerEvents: 'none' } : {}}>
+      <footer className="bg-gray-800 text-white py-8" >
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="text-sm">
             {currentContent.footer.text.replace('{year}', new Date().getFullYear().toString())}
